@@ -17,7 +17,6 @@
         <!--[if lt IE 8]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
         <!-- Add your site or application content here -->
         <div class="outer_layer" >
 			<div class="top_layer">
@@ -132,11 +131,10 @@
 										<input type="text" class="newsletter_text" id="email_subscription" name="email_subscription"/>
 										<button class="join_now_btn">Join Now</button>
 									</div>
-									
 								</li>
 								<div class="separator"></div>
 								<li>
-									<img src="img/social_twitter.png"/> Follow us on Twitter 								
+									<img src="img/social_twitter.png"/> Follow us on Twitter
 								</li>
 								<div class="separator"></div>
 								<li>
@@ -209,10 +207,7 @@
 								<span style="font-weight:bold;font-size:12px;">Price</span><span class="WebRupee" style="color:red;margin-left:5px;font-weight:bold;font-size:12px;">Rs.</span></style> <span class="product_price">55</span>
 							</div>
 						</div>
-						
-						
 					</div>
-					
 				</div>
 			</div>
 			<!-- main_div ends here -->
@@ -288,6 +283,7 @@
 			items_per_page = parseInt($("#items_per_page").val());
 			var items_per_row=4;
 			var selected_product;
+			var ipa;
 			var productHash=[];
 			for(var i=0;i<5;i++){
 				product={};	
@@ -295,49 +291,89 @@
 				product["prd_name"]= "T-Shirt";
 				product["price"]= 55+i;
 				product["popularity"]= "";
+				product["prd_category"]="";
+				product["prd_discount"]="";
 				product["img"]="img/t-shirt.png"
 				productHash[i]=product;	
-				}
-				
+			}
+
 			$(function(){
 				showAllProducts(items_per_page,productHash,items_per_row);
+				$.getJSON("http://smart-ip.net/geoip-json?callback=?", function(data){
+				   ipa=data.host;
+				});
+				
+				now = $.now();
+				
 				$("#items_per_page").change(function(){
 					items_per_page = parseInt($("#items_per_page").val());
 					showAllProducts(items_per_page,productHash,items_per_row);
 					});
 				$("#add_to_cart").click(function(){
+					if($("#selected_size_div").text() == ""){
+						alert("Size should be selected");
+						return false;
+					}
+					if(!$("#selected_colour_div").hasClass("square")){
+						alert("Color should be selected");
+						return false;
+						}
+						
 					if($("#tab tr").length>1){
-							if(Modernizr.localstorage){
+						if(Modernizr.localstorage){
 							var product= {};
 							var allProducts=[];
-							var purchase={};
-							product.id="";
-							product.prd_id="";
-							product.prd_name="";
-							product.prd_category="";
-							product.prd_price="";
-							product.prd_discount="";
-							product.prd_discount_in_price="";
-							product.prd_discount_sale="";
-							product.quantity_ordered="";
-							product.ordered_time="";
-							product.color="";
-							product.size="";
-							
+							var purchase;
+							classArray = $('#selected_colour_div').attr('class').split(" ");
+							product.id = selected_prd["id"];
+							product.prd_id = selected_prd["id"];
+							product.prd_name = selected_prd["prd_name"];
+							product.prd_category = selected_prd["prd_category"];
+							product.prd_price = selected_prd["price"];
+							product.prd_discount_sale = selected_prd["discount_sale"];
+							product.prd_discount = selected_prd["prd_discount"];
+							product.prd_discount_in_price = (selected_prd["prd_discount"] * parseFloat($("#tot_price1").text()))/100;
+							product.quantity_ordered = $('#qty').val();
+							product.gross_total_price = parseFloat($("#tot_price1").text());
+							product.net_total_price = parseFloat($("#tot_price1").text()) - product.prd_discount_in_price;
+							product.ordered_time = now;
+							product.color = classArray[1].trim();
+							product.size = $('#selected_size_div').text();
 							allProducts.push(product);
-							purchase.all_products= allProducts
-							purchase.ipa="";
-							purchase.purchased_time="";
-							purchase.purchased_via="";						
-							localStorage.setItem("purchase",purchase);
+						
+							purchase = localStorage["purchase"];
+							
+							if(typeof purchase != "undefined" ){
+								purchase.all_products = allProducts
+								purchase.ipa = ipa;
+								//purchase.purchased_time = "";
+								//purchase.purchased_via = "";
+								purchase.total_discount_amount  +=  product.prd_discount_in_price;
+								purchase.total_net_purchase_amount +=product.net_total_price ;
+								purchase.total_gross_purchase_amount +=product.gross_total_price;
+								localStorage["purchase"] = purchase;
+								alert("cart updated");
+								}else{
+								purchase = {};
+								purchase.all_products = allProducts
+								purchase.ipa = ipa;
+								//purchase.purchased_time = "";
+								//purchase.purchased_via = "";
+								purchase.total_discount_amount  =  product.prd_discount_in_price;
+								purchase.total_net_purchase_amount =product.net_total_price ;
+								purchase.total_gross_purchase_amount =product.gross_total_price;
+								localStorage.setItem("purchase",purchase);
+								alert("cart created ");
+								console.log(localStorage["purchase"],"Purchase added....")
+								}
 							}
 						else{						
 							alert("Support for localstorage is not found in your browser");
-							}
-						}else{
-							alert("Atleast one purchase is necessary to add to cart.")
-							}
-					});
+						}
+					}else{
+						alert("Atleast one purchase is necessary to add to cart.")
+					}
+				});
 					
 				$(".size").click(function(){					
 					if($(this).hasClass("selecting_size")){
@@ -373,11 +409,10 @@
 					});
 					
 					$("#add_row").click(function(){
-						var  currRow = $('#tab tr').length;					
+						var currRow = $('#tab tr').length;					
 						var s = "<tr style='margin-top:5px;'><td class='sno'>"+currRow+"</td>";
 						s += "<td><input type='text' class='qty' maxlength='3' id='qty"+currRow+"' name='qty"+currRow+"' size='3' value='1'/></td>";
 						s +=  "<td><div id='price_per_quantity"+currRow+"' class='price_per_quantity'></div></td>";
-						
 						s +=  "<td><div id='tot_price"+currRow+"' class='tot_price'></div></td>";
 						s +=  "<td><div id='selected_size_div"+currRow+"'></div></td>";
 						s +=  "<td><div id='selected_colour_div"+currRow+"' align='center'></div></td>";
@@ -388,20 +423,20 @@
 						$(".price_per_quantity").text(selected_prd["price"]);
 						$(".tot_price").text(parseInt($(".qty").val())*(parseFloat(selected_prd["price"])));
 						//$("input:text").addClass('qty');
-						});
+					});
 						
 						
 					$("#del_row").click(function(){
 						deleteRow("tab");
 						rowArrange("tab");
-						});
+					});
 					
 					$(".square").click(function(){
 						if($(this).hasClass("selecting_color")){
 						//$(this).toggleClass("selecting_size");
-						$(this).removeClass("selecting_color");
-						$(".square").removeClass("selecting_color");
-						$("#selected_color_div").removeClass();
+							$(this).removeClass("selecting_color");
+							$(".square").removeClass("selecting_color");
+							$("#selected_colour_div").removeClass();
 						}else{
 							$(".square").removeClass("selecting_color");
 							$("#selected_colour_div").removeClass();
@@ -424,7 +459,6 @@
 							else if(this.id=='yellow_btn'){
 								$("#selected_colour_div").addClass("square yellow");
 							}
-							
 						}
 					});
 					
@@ -433,39 +467,31 @@
 					selected_prd=productHash[selected_product];
 					$("#products_heading").text(selected_prd["prd_name"]);
 					$("#selected_prd_img img")[0].src= selected_prd["img"];
-					$(".price_per_quantity").text(selected_prd["price"]);
-					$("#tot_price").text(parseInt($(".qty").val())*(parseFloat(selected_prd["price"])));
+					$("#price_per_quantity1").text(selected_prd["price"]);
+					$("#tot_price1").text(parseInt($("#qty").val())*(parseFloat(selected_prd["price"])));
 					$(".product_div").colorbox({inline:true, width:"50%",transition:"fade"});
 				});
-				$("table").on('blur', 'input:text', function() {
-					var curr_row=$(this).closest("tr");
-					curr_row.find('td .tot_price').text(parseInt($(this).val())*(parseFloat(selected_prd["price"])));
-					//alert(curr_row.find('td .tot_price').text());
+				
+				$("input:text").blur(function(){
+					$("#tot_price1").text(parseInt($("#qty").val())*(parseFloat(selected_prd["price"])));
 				});
-				//$("input:text").blur(function(){
-					//alert($(this).closest("tr").data("uid"));
-					
-					//$(this).closest($(".tot_price").text(parseInt($(".qty").val())*(parseFloat(selected_prd["price"]))));
-				//});
 					
 				var preloads = [
 					'img/paypal.jpg',
 					'img/googlecheckout.png'];
-				$("#paypal")[0].src = preloads[0];
-				$("#checkout")[0].src = preloads[1];
-				
+					$("#paypal")[0].src = preloads[0];
+					$("#checkout")[0].src = preloads[1];
 				
 				$(".check_btn").click(function(){
 					$(".shopping_cart").toggle();
-					});
+				});
 				/*var paypalHeight = $('#paypal img').height();
 				if (paypalHeight < 400) {
 					var margintop = (paypalHeight-400) / 2;
 					$('.sidemenu_checkout').css('margin-top', margintop);
 					
 				}*/
-				
-				});
+			});
 				
 			function showAllProducts(_items_per_page,_productHash,_items_per_row){
 				var totProducts=_productHash.length;
@@ -489,15 +515,12 @@
 						totIpr = totProducts / _items_per_row;
 						remainIpr = totProducts % _items_per_row;
 						}
-					
 					var productCount= 0;
-					
 					var temp=0;
 					for(var pageCount = 0;pageCount < totPages; pageCount++){
 						var productString = "";
 						//for(var divCount=0;divCount < totIpr;divCount++ ){								
 							for( var pro_cnt = 0; pro_cnt < totProducts;  pro_cnt++){
-								
 								if(temp < _items_per_page){																	
 									productString += productOut(productHash[pro_cnt]);
 									productCount++;
@@ -507,7 +530,7 @@
 							}
 						}
 						//}
-						$(".product_shelves").html(productString);
+					$(".product_shelves").html(productString);
 				}
 				
 				function productOut(prd){
@@ -516,61 +539,61 @@
 					return str;
 				}
 				
+				/*
+				Unused functions
+				$("table").on('blur', 'input:text', function() {
+					var curr_row=$(this).closest("tr");
+					curr_row.find('td .tot_price').text(parseInt($(this).val())*(parseFloat(selected_prd["price"])));
+					//alert(curr_row.find('td .tot_price').text());
+				});
+				
 				function addRow(tableId) {
-			 
-						var table = document.getElementById(tableId);
-			 
-						var rowCount = table.rows.length;
-						var row = table.insertRow(rowCount);
-			 
-						var cell1 = row.insertCell(0);
-						var element1 = document.createElement("input");
-						element1.type = "checkbox";
-						element1.name="chkbox[]";
-						cell1.appendChild(element1);
-			 
-						var cell2 = row.insertCell(1);
-						cell2.innerHTML = rowCount + 1;
-			 
-						var cell3 = row.insertCell(2);
-						var element2 = document.createElement("input");
-						element2.type = "text";
-						element2.name = "txtbox[]";
-						cell3.appendChild(element2);
-			 
-			 
-					}
+			 		var table = document.getElementById(tableId);
+			 		var rowCount = table.rows.length;
+					var row = table.insertRow(rowCount);
+					var cell1 = row.insertCell(0);
+					var element1 = document.createElement("input");
+					element1.type = "checkbox";
+					element1.name="chkbox[]";
+					cell1.appendChild(element1);
+					var cell2 = row.insertCell(1);
+					cell2.innerHTML = rowCount + 1;
+					var cell3 = row.insertCell(2);
+					var element2 = document.createElement("input");
+					element2.type = "text";
+					element2.name = "txtbox[]";
+					cell3.appendChild(element2);
+				}
 					
-					function rowArrange(tableID){
-						var table = document.getElementById(tableID);
-						var rowCount = table.rows.length;
-						for(var i=1;i < rowCount;i++){
-							var row_this = table.rows[i];
-							row_this.cells[0].innerHTML=i;
-							}
-						}
-			 
-					function deleteRow(tableID) {
-						try {
-						var table = document.getElementById(tableID);
-						var rowCount = table.rows.length;
-						var temp=0;
-							for(var i=1; i<rowCount; i++) {
-								//var row = table.rows[i];
-								$("input:checkbox[name=check]:checked").each(function() {
-									$(this).closest("tr").remove();
-									return false;
-									//selected.push($(this).val());
-									//table.deleteRow( parseInt($(this).val()) - temp );
-									
-									//temp++;
-								});
-							}
-						}catch(e) {
-							alert(e);
-						}
+				function rowArrange(tableID){
+					var table = document.getElementById(tableID);
+					var rowCount = table.rows.length;
+					for(var i=1;i < rowCount;i++){
+						var row_this = table.rows[i];
+						row_this.cells[0].innerHTML=i;
 					}
- 
+				}
+			 
+				function deleteRow(tableID) {
+					try {
+					var table = document.getElementById(tableID);
+					var rowCount = table.rows.length;
+					var temp=0;
+						for(var i=1; i<rowCount; i++) {
+							//var row = table.rows[i];
+							$("input:checkbox[name=check]:checked").each(function() {
+								$(this).closest("tr").remove();
+								return false;
+								//selected.push($(this).val());
+								//table.deleteRow( parseInt($(this).val()) - temp );
+								//temp++;
+							});
+						}
+					}catch(e) {
+						alert(e);
+					}
+				}				
+				*/ 
 		</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
@@ -592,7 +615,7 @@
 					<div id="selected_prd_img">
 						<img/>
 						<br />
-					</div>					
+					</div>
 					<!--selected_prd_img ends here -->
 					<!--selected_prd_desc starts here -->
 					<div id="selected_prd_desc">
@@ -610,14 +633,13 @@
 					<div>Buy this Product
 						<span style="margin-left: 10px;">
 							<button id="add_to_cart" class="check_btn" align="right"> Add to Cart</button></span>
-						<span style="margin:10px;">
+						<!--<span style="margin:10px;">
 							<button id="add_row" class="check_btn" align="right"> + Add Purchase</button>
 						</span>
 						<span style="margin:10px;">
 							<button id="del_row" class="check_btn" align="right"> - Delete Purchase</button>
-						</span>
+						</span>-->
 					</div>
-					
 						<table style="border:1px solid #ccc; margin:5px;width:575px;font-size:12px;" id="tab">
 							<tr>
 								<th>
@@ -644,7 +666,7 @@
 							</tr>
 							<tr>
 									<td class="sno">1.</td>
-									<td><input type="text" maxlength="3" id="qty" name="qty" class='qty1' size="3" value="1"/></td>
+									<td><input type="text" maxlength="3" id="qty" name="qty" class='qty' size="3" value="1"/></td>
 									<td><div id="price_per_quantity1" class="price_per_quantity"></div></td>
 									<td><div class="tot_price" id="tot_price1"></div></td>
 									<td><div id="selected_size_div"></div></td>
