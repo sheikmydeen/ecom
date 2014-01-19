@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+   Sheik Mydeen Senior Developer Freelancer
+# TEAM
+
+    Jasmine	 -- Programmer -- 
+
+# THANKS
+
+    <name>
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    Normalize.css, jQuery, Modernizr

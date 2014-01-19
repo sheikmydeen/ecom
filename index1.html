@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Ecommerce</title>
+        <meta name="description" content="Ecommerce application to sell and buy goods">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/colorbox.css" />
+        <link rel="stylesheet" href="css/font.css">
+        <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div class="outer_layer" >
+			<div class="top_layer">
+				<div class="outer_box">Account Sign-in</div> 
+				<div class="outer_box">Register</div> 
+				<div class="outer_box">Buyer's Guide</div> 
+				<div class="outer_box">About</div> 
+				<div class="outer_box">Blog</div> 
+				<div class="outer_box">Contact</div> 
+				<div class="outer_box1" style="margin:1px 5px;"><img src="img/phone_1.png"/><phone>+91-9095739367</phone></div> 
+				<div class="outer_box1" ><img src="img/chat1.png"/>Live Help</div>
+				<div class="outer_box1" ><img src="img/flag_india.png"/><img src="img/flag_usa.png"/></div>
+			</div>
+	        <!-- cart_layer starts here-->
+			<div class="cart_layer">
+				<div class="cart">
+					<div class="items_count">
+						<img src="img/shopping_basket.png">0 Items in your Cart
+						<button class="check_btn" style="margin: 2px;">Check Out</button>
+					</div>
+				</div>
+				<div class="ws_head">Ecommerce Website</div>
+				<div class="search_layer"><div><input type="text" name="search_fields" id="search_fields" class="search_box" value="Search Website"/><button class='go_btn'>Go</button></div></div>
+			</div>
+			<!-- cart layer ends here -->
+			<!-- menu div starts here -->
+			<div class='menu' align='center'>
+				<ul>
+					<li class='active'>
+						Home
+					</li>
+					<li>
+						Latest Arrivals
+					</li>
+					<li>
+						Men's
+					</li>
+					<li>
+						Women's
+					</li>
+					<li>
+						Kids
+					</li>
+					<li>
+						Brands
+					</li>
+					<li>
+						Sale
+					</li>
+					<li>
+						Gift Cards
+					</li>
+					<li>
+						Freebies
+					</li>
+					<li>
+						Feedback
+					</li>
+				</ul>
+			</div>
+			<div class="shopping_cart">No items in the shopping cart...</div>			
+        </div>
+        <!-- outer_layer Ends here -->
+        <div class="content">
+			<div class="main_div" align="center">
+				<!-- offer_div starts here -->
+				<div class="offer_div">
+					<div class="offer_type">Festival offer</div>
+					<div class="sale_font"><span>SAle</span>SAle</div>
+					<div class="green_bed">
+						<img class="img1" src="img/t-shirt.png"/>
+						<img class="img2" src="img/t-shirt.png"/>
+						<img class="img3" src="img/t-shirt.png"/>
+						
+					</div>
+					<div class="offer_product">
+						<div class="prd_name">Product Name</div>
+						<div class="prd_desc">This is the product got a discount of 20 %. Only 2500 rupees only.</div>
+					</div>
+				</div>
+				<!-- offer_div ends here -->
+				<div class="product_content">
+					<div class="side_menu_divs">
+						<div class="sidemenu">
+							<ul>
+								<li class="header">
+									Browse Categories
+									
+								</li>
+								<li>
+									Fashion Apparles
+									<div class="separator"></div>
+								</li>
+								<li>
+									Classical Goods
+									<div class="separator"></div>
+								</li>
+								<li>
+									Garden Goods
+									<div class="separator"></div>
+								</li>
+								<li class="footer"> 
+									Clothes
+								</li>
+							</ul>
+						</div>
+						<div class="sidemenu_joinus">
+							<ul>
+								<li class="header">
+									<div class="newsletter">
+										Join our newsletter list to get the latest updates
+										<input type="text" class="newsletter_text" id="email_subscription" name="email_subscription"/>
+										<button class="join_now_btn">Join Now</button>
+									</div>
+									
+								</li>
+								<div class="separator"></div>
+								<li>
+									<img src="img/social_twitter.png"/> Follow us on Twitter 								
+								</li>
+								<div class="separator"></div>
+								<li>
+									<img src="img/social_facebook.png"/> Become our fan on Facebook
+								</li>
+								<div class="separator"></div>
+								<li>
+									<img src="img/social_linked_in.png"/> Connect with us on LinkedIn
+								</li>
+								<div class="separator"></div>
+								<li class="footer">
+									<img src="img/gmail.png"/> Send us your Email enqueries
+								</li>
+							</ul>
+						</div>
+						<div class="sidemenu_checkout">
+							<img id="paypal" />
+							<img id="checkout" />
+						</div>
+					</div>
+					<div class="product_divs">						
+						<div class="filter_div">
+							Sort by: <select name="order_by">
+										<option value="asc"> Low price to High </option>
+										<option value="desc">High price to Low </option>
+										<option value="desc">Popularity </option>										
+									</select>
+							<!--Brand : <select name="brandName">
+									<option value="maruti"> Maruti Suzuki </option>
+									<option value="hyundai">Hyundai </option>
+								</select>
+							Product : <select name="productName">
+									<option value="swift">Swift </option>
+									<option value="ritz"> Ritz</option>
+								</select>-->
+							<div class="items_per_page" align='right' style="margin-left:250px;"> 
+								Items per page 
+									<select name="items_per_page" id="items_per_page">
+										<option value="20">20</option>
+										<option value="40">40</option>
+										<option value="60">60</option>
+										<option value="80">80</option>
+										<option value="100">100</option>
+									</select>
+							</div>
+						
+						</div>
+						<!-- End of filter_div --> 
+						<div class="heading1">
+							Our Products
+						</div>
+						<style>
+						</style>
+						<div class="product_shelves">
+							<div class="product_div">
+								<img src="img/t-shirt.png"/>
+								<div class="product_name">Product Name</div>
+								<span style="font-weight:bold;font-size:12px;">Price</span><span class="WebRupee" style="color:red;margin-left:5px;font-weight:bold;font-size:12px;">Rs.</span></style> <span class="product_price">55</span>
+							</div><div class="product_div">
+								<img src="img/t-shirt.png"/>
+								<div class="product_name">Product Name</div>
+								<span style="font-weight:bold;font-size:12px;">Price</span><span class="WebRupee" style="color:red;margin-left:5px;font-weight:bold;font-size:12px;">Rs.</span></style> <span class="product_price">55</span>
+							</div><div class="product_div">
+								<img src="img/t-shirt.png"/>
+								<div class="product_name">Product Name</div>
+								<span style="font-weight:bold;font-size:12px;">Price</span><span class="WebRupee" style="color:red;margin-left:5px;font-weight:bold;font-size:12px;">Rs.</span></style> <span class="product_price">55</span>
+							</div><div class="product_div">
+								<img src="img/t-shirt.png"/>
+								<div class="product_name">Product Name</div>
+								<span style="font-weight:bold;font-size:12px;">Price</span><span class="WebRupee" style="color:red;margin-left:5px;font-weight:bold;font-size:12px;">Rs.</span></style> <span class="product_price">55</span>
+							</div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+			</div>
+			<!-- main_div ends here -->
+			</div>
+			<!-- content ends here -->
+			<div class="secure_shopping">
+				<div class="div1">
+					<div class="div2">Shop online with us safely & securely</div>
+					<div class="div3">We ship your orders anywhere.</div>
+				</div>
+			</div>
+			<div class="footer1">
+				<div class="footer_details">
+					<div class="company_div">
+						<ul>
+							<li class="header">company</li>
+							<li>home</li>
+							<li>about us</li>
+							<li>blog</li>
+							<li>latest news</li>
+							<li>login</li>
+							<li>join us</li>							
+						</ul>
+					</div>
+					<div class="category_div">
+						<ul>
+							<li class="header">catagories</li>
+							<li>mens</li>
+							<li>womens</li>
+							<li>kids</li>
+							<li>latest arrivals</li>
+							<li>freebies</li>
+							<li>fashion</li>							
+						</ul>
+					</div><div  class="information_div">
+						<ul>
+							<li class="header">information</li>
+							<li>my account</li>
+							<li>rewards</li>
+							<li>terms</li>
+							<li>condition</li>
+							<li>buying guide</li>
+							<li>FAQ</li>							
+						</ul>
+					</div><div class="social_network_div">
+						<ul>
+							<li class="header">social_network</li></li>
+							<li>my account</li>
+							<li>rewards</li>
+							<li>terms</li>
+							<li>condition</li>
+							<li>buying guide</li>
+							<li>FAQ</li>							
+						</ul>
+					</div><div class="contact_us_div">
+						<ul>
+							<li class="header">contact_us</li>
+							<li>phone no:9095739367</li>
+							<li>tol:125656565</li>
+							<li>email:send us an <span style="font-weight:bold;font-size:12px;"><a href="#">Email</a></span></li>
+							<li>Mon- Sat 9am-7.30pm</li>
+							<li>sundays & holidays closed</li>
+							<li>Powered By <span style="font-weight:bold;font-size:12px;color:yellow;">JasmineSoft</span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="js/jquery.colorbox-min.js"></script>
+		<script>
+			var items_per_page=0;
+			items_per_page = parseInt($("#items_per_page").val());
+			var items_per_row=4;
+			var selected_product;
+			var productHash=[];
+			for(var i=0;i<5;i++){
+				product={};	
+				product["id"]=i;
+				product["prd_name"]= "T-Shirt";
+				product["price"]= 55+i;
+				product["popularity"]= "";
+				product["img"]="img/t-shirt.png"
+				productHash[i]=product;	
+				}
+				
+			$(function(){
+				showAllProducts(items_per_page,productHash,items_per_row);
+				$("#items_per_page").change(function(){
+					items_per_page = parseInt($("#items_per_page").val());
+					showAllProducts(items_per_page,productHash,items_per_row);
+					});
+				$("#add_to_cart").click(function(){
+					if($("#tab tr").length>1){
+							if(Modernizr.localstorage){
+							var product= {};
+							var allProducts=[];
+							var purchase={};
+							product.id="";
+							product.prd_id="";
+							product.prd_name="";
+							product.prd_category="";
+							product.prd_price="";
+							product.prd_discount="";
+							product.prd_discount_in_price="";
+							product.prd_discount_sale="";
+							product.quantity_ordered="";
+							product.ordered_time="";
+							product.color="";
+							product.size="";
+							
+							allProducts.push(product);
+							purchase.all_products= allProducts
+							purchase.ipa="";
+							purchase.purchased_time="";
+							purchase.purchased_via="";						
+							localStorage.setItem("purchase",purchase);
+							}
+						else{						
+							alert("Support for localstorage is not found in your browser");
+							}
+						}else{
+							alert("Atleast one purchase is necessary to add to cart.")
+							}
+					});
+					
+				$(".size").click(function(){					
+					if($(this).hasClass("selecting_size")){
+						//$(this).toggleClass("selecting_size");
+						$(this).removeClass("selecting_size");
+						$(".size").removeClass("selecting_size");
+						$("#selected_size_div").text("");
+						}else{
+							$(".size").removeClass("selecting_size");
+							$("#selected_size_div").removeClass("selecting_size");
+							$(this).addClass("selecting_size");
+							if(this.id=='s_btn'){
+								$("#selected_size_div").text("S");
+								//$("#selected_size_div").addClass("size");
+							}
+							else if(this.id=='m_btn'){
+								$("#selected_size_div").text("M");
+								//$("#selected_size_div").addClass("size");								
+								}
+							else if(this.id=='l_btn'){
+								$("#selected_size_div").text("L");
+								//$("#selected_size_div").addClass("size");
+								}
+							else if(this.id=='xl_btn'){
+								$("#selected_size_div").text("XL");
+								//$("#selected_size_div").addClass("size");																
+								}
+							else if(this.id=='xxl_btn'){
+								$("#selected_size_div").text("XXL");
+								//$("#selected_size_div").addClass("size");																
+								}
+						}
+					});
+					
+					$("#add_row").click(function(){
+						var  currRow = $('#tab tr').length;					
+						var s = "<tr style='margin-top:5px;'><td class='sno'>"+currRow+"</td>";
+						s += "<td><input type='text' class='qty' maxlength='3' id='qty"+currRow+"' name='qty"+currRow+"' size='3' value='1'/></td>";
+						s +=  "<td><div id='price_per_quantity"+currRow+"' class='price_per_quantity'></div></td>";
+						
+						s +=  "<td><div id='tot_price"+currRow+"' class='tot_price'></div></td>";
+						s +=  "<td><div id='selected_size_div"+currRow+"'></div></td>";
+						s +=  "<td><div id='selected_colour_div"+currRow+"' align='center'></div></td>";
+						s += "<td><div id='delete_div' align='center'><input type='checkbox' name='check' id='check"+currRow+"' value='"+currRow+"'/></div></td>";
+						s += "</tr>";
+						$("#tab").find("tbody").append(s);
+						//Updating the price 
+						$(".price_per_quantity").text(selected_prd["price"]);
+						$(".tot_price").text(parseInt($(".qty").val())*(parseFloat(selected_prd["price"])));
+						//$("input:text").addClass('qty');
+						});
+						
+						
+					$("#del_row").click(function(){
+						deleteRow("tab");
+						rowArrange("tab");
+						});
+					
+					$(".square").click(function(){
+						if($(this).hasClass("selecting_color")){
+						//$(this).toggleClass("selecting_size");
+						$(this).removeClass("selecting_color");
+						$(".square").removeClass("selecting_color");
+						$("#selected_color_div").removeClass();
+						}else{
+							$(".square").removeClass("selecting_color");
+							$("#selected_colour_div").removeClass();
+							$(this).addClass("selecting_color");
+							if(this.id=='blue_btn'){
+								$("#selected_colour_div").addClass("square blue");
+							}
+							else if(this.id=='white_btn'){
+								$("#selected_colour_div").addClass("square white");								
+								}
+							else if(this.id=='orange_btn'){
+								$("#selected_colour_div").addClass("square orange");
+								}
+							else if(this.id=='red_btn'){
+								$("#selected_colour_div").addClass("square red");
+								}
+							else if(this.id=='green_btn'){
+								$("#selected_colour_div").addClass("square green");
+								}
+							else if(this.id=='yellow_btn'){
+								$("#selected_colour_div").addClass("square yellow");
+							}
+							
+						}
+					});
+					
+				$(".product_div").click(function(){
+					selected_product=this.id;
+					selected_prd=productHash[selected_product];
+					$("#products_heading").text(selected_prd["prd_name"]);
+					$("#selected_prd_img img")[0].src= selected_prd["img"];
+					$(".price_per_quantity").text(selected_prd["price"]);
+					$("#tot_price").text(parseInt($(".qty").val())*(parseFloat(selected_prd["price"])));
+					$(".product_div").colorbox({inline:true, width:"50%",transition:"fade"});
+				});
+				$("table").on('blur', 'input:text', function() {
+					var curr_row=$(this).closest("tr");
+					curr_row.find('td .tot_price').text(parseInt($(this).val())*(parseFloat(selected_prd["price"])));
+					//alert(curr_row.find('td .tot_price').text());
+				});
+				//$("input:text").blur(function(){
+					//alert($(this).closest("tr").data("uid"));
+					
+					//$(this).closest($(".tot_price").text(parseInt($(".qty").val())*(parseFloat(selected_prd["price"]))));
+				//});
+					
+				var preloads = [
+					'img/paypal.jpg',
+					'img/googlecheckout.png'];
+				$("#paypal")[0].src = preloads[0];
+				$("#checkout")[0].src = preloads[1];
+				
+				
+				$(".check_btn").click(function(){
+					$(".shopping_cart").toggle();
+					});
+				/*var paypalHeight = $('#paypal img').height();
+				if (paypalHeight < 400) {
+					var margintop = (paypalHeight-400) / 2;
+					$('.sidemenu_checkout').css('margin-top', margintop);
+					
+				}*/
+				
+				});
+				
+			function showAllProducts(_items_per_page,_productHash,_items_per_row){
+				var totProducts=_productHash.length;
+				var remainder= 0;
+				var totPages = 0;
+				var totIpr = 0;
+				var remainIpr=0;
+				if( totProducts >= _items_per_page){
+					 remainder = totProducts % _items_per_page;
+					 totPages =  totProducts / _items_per_page;
+					}
+				else{
+					totPages=1;
+					remainder=totProducts;
+					}
+				if(_items_per_row >= totProducts){
+					totIpr=1;					
+					remainIpr= totProducts
+					}
+					else{
+						totIpr = totProducts / _items_per_row;
+						remainIpr = totProducts % _items_per_row;
+						}
+					
+					var productCount= 0;
+					
+					var temp=0;
+					for(var pageCount = 0;pageCount < totPages; pageCount++){
+						var productString = "";
+						//for(var divCount=0;divCount < totIpr;divCount++ ){								
+							for( var pro_cnt = 0; pro_cnt < totProducts;  pro_cnt++){
+								
+								if(temp < _items_per_page){																	
+									productString += productOut(productHash[pro_cnt]);
+									productCount++;
+									temp++;
+									continue;
+								}
+							}
+						}
+						//}
+						$(".product_shelves").html(productString);
+				}
+				
+				function productOut(prd){
+					var str="";
+					str="<div class='product_div' id='"+prd["id"]+"' href='#explore_product'><input type='hidden' name='pid' id='pid' value='"+prd["id"]+"'/><img src='"+ prd["img"] +"'/><div class='product_name'>"+prd["prd_name"]+"</div><span style='font-weight:bold;font-size:12px;'>Price</span> <span class='WebRupee' style='color:red;margin-left:5px;font-weight:bold;font-size:12px;'>Rs.</span><span class='product_price'>"+prd["price"]+"</span></div>";
+					return str;
+				}
+				
+				function addRow(tableId) {
+			 
+						var table = document.getElementById(tableId);
+			 
+						var rowCount = table.rows.length;
+						var row = table.insertRow(rowCount);
+			 
+						var cell1 = row.insertCell(0);
+						var element1 = document.createElement("input");
+						element1.type = "checkbox";
+						element1.name="chkbox[]";
+						cell1.appendChild(element1);
+			 
+						var cell2 = row.insertCell(1);
+						cell2.innerHTML = rowCount + 1;
+			 
+						var cell3 = row.insertCell(2);
+						var element2 = document.createElement("input");
+						element2.type = "text";
+						element2.name = "txtbox[]";
+						cell3.appendChild(element2);
+			 
+			 
+					}
+					
+					function rowArrange(tableID){
+						var table = document.getElementById(tableID);
+						var rowCount = table.rows.length;
+						for(var i=1;i < rowCount;i++){
+							var row_this = table.rows[i];
+							row_this.cells[0].innerHTML=i;
+							}
+						}
+			 
+					function deleteRow(tableID) {
+						try {
+						var table = document.getElementById(tableID);
+						var rowCount = table.rows.length;
+						var temp=0;
+							for(var i=1; i<rowCount; i++) {
+								//var row = table.rows[i];
+								$("input:checkbox[name=check]:checked").each(function() {
+									$(this).closest("tr").remove();
+									return false;
+									//selected.push($(this).val());
+									//table.deleteRow( parseInt($(this).val()) - temp );
+									
+									//temp++;
+								});
+							}
+						}catch(e) {
+							alert(e);
+						}
+					}
+ 
+		</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/webrupee.js"></script>        
+		<script src="js/jquery.colorbox.min.js"></script>
+		<div style="display:none;">
+			<style>
+				#add_to_cart{
+					}
+					
+				#cboxLoadedContent{
+					background: #fff;
+					}		
+
+			</style>
+			<div id="explore_product" >
+				<div id="products_heading" style="text-align:center;font-weight:bold;font-size: 20px;"></div>
+				<div id="selected_prd_content">
+					<div id="selected_prd_img">
+						<img/>
+						<br />
+					</div>					
+					<!--selected_prd_img ends here -->
+					<!--selected_prd_desc starts here -->
+					<div id="selected_prd_desc">
+						Stock: <div id="stock_prd" class='sold'>In Stock</div>
+						Size: <div id="avail_size"><span><button id='s_btn' class='size'>S</button><button id='m_btn' class='size'>M</button><button id='l_btn' class='size'>L</button><button id='xl_btn' class='size'>XL</button><button id='xxl_btn' class='size'>XXL</button></span></div>
+						Colour: <div id="color_prd">
+								<span><button id="blue_btn" class="square blue"></button>
+									<button id="white_btn" class="square white"></button>
+									<button id="red_btn" class="square red"></button>
+									<button id="orange_btn" class="square orange"></button>
+									<button id="green_btn" class="square green"></button>
+									<button id="yellow_btn" class="square yellow"></button></span>
+							</div>
+					</div>
+					<div>Buy this Product
+						<span style="margin-left: 10px;">
+							<button id="add_to_cart" class="check_btn" align="right"> Add to Cart</button></span>
+						<span style="margin:10px;">
+							<button id="add_row" class="check_btn" align="right"> + Add Purchase</button>
+						</span>
+						<span style="margin:10px;">
+							<button id="del_row" class="check_btn" align="right"> - Delete Purchase</button>
+						</span>
+					</div>
+					
+						<table style="border:1px solid #ccc; margin:5px;width:575px;font-size:12px;" id="tab">
+							<tr>
+								<th>
+								S.No
+								</th>
+								<th>
+								Qty
+								</th>
+								<th>
+								Price per Qty
+								</th>
+								<th>
+									Total Price( Rs.)
+								</th>
+								<th>
+									Size
+								</th>
+								<th>
+									Colour
+								</th>
+								<th>
+									Delete
+								</th>
+							</tr>
+							<tr>
+									<td class="sno">1.</td>
+									<td><input type="text" maxlength="3" id="qty" name="qty" class='qty1' size="3" value="1"/></td>
+									<td><div id="price_per_quantity1" class="price_per_quantity"></div></td>
+									<td><div class="tot_price" id="tot_price1"></div></td>
+									<td><div id="selected_size_div"></div></td>
+									<td><div id="selected_colour_div" align="center"></div></td>
+									<td><div id="delete_div" align="center"><input type="checkbox" name="check" id='check1' value='1' checked='unchecked' value=""/></div></td>
+								</tr>										
+						</table>						
+					<!--selected_prd_desc ends here -->
+				</div>
+			</div>
+		</div>
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+    </body>
+</html>
+

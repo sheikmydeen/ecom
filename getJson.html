@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+   <script>
+		$(document).ready(function () {
+			$("#driver").click(function (event) {
+				
+				$.getJSON('data.js', function (em) {
+					
+					$('#stage').html('<p>Name: ' + em.name + '</p>');
+					$('#stage').append('<p>Age : ' + em.age + '</p>');
+					$('#stage').append('<p> Sex: ' + em.sex + '</p>');
+				});
+			});
+		});
+   </script>
+   <div id="driver" style="background:yellow; height:10px;width:20px;cursor:pointer">
+		Click me
+   </div>
+   
+   <div id="stage">
+	
+   </div>
+</html>

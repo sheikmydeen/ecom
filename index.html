@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Ecommerce</title>
+        <meta name="description" content="Ecommerce application to sell and buy goods">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        
+        <link rel="stylesheet" href="css/font.css">
+        <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+    </head>
+    <style>
+		.outer_layer
+		{
+			background: #000000;
+			color: #fff;
+		}
+		
+		.top_layer{
+			text-align:center;
+			}
+				
+		.outer_box{
+			text-align:center;
+			#background :#808080;
+			padding: 5px;
+			border-radius: 5px;
+			font-size: 10px;
+			display:inline-block;
+			border : none;
+			margin-left : 5px;
+			width : auto;			
+		}
+		
+		.outer_box:hover{
+			#background: brown;
+			#font-size : 12px;
+			font-weight:bold;
+			border 	  : 1px #ccc;
+			cursor : pointer;
+		}
+		
+		.outer_box1{
+			#background :#808080;
+			padding: 5px;
+			border-radius: 5px;
+			font-size: 10px;
+			display:inline-block;
+			border : none;
+			margin : none;
+			width : auto;
+			cursor:pointer;
+		}	
+			
+		.outer_box1 img{
+			height: 30px;
+			width :30px;			
+		}
+		.cart_layer{
+			width: 100%;				
+			height: 120px;
+			margin-left:auto;
+			margin-right:auto;
+			background-image: linear-gradient(to bottom, #DD767A 0%, #CD2927 100%);
+			#background:linear-gradient(to right, #FF2908 0%, #FFB70F 100%) no-repeat border-box, linear-gradient(to right,#FFB70F 50%, #FF2908 100% ) no-repeat border-box;
+			#linear-gradient(red, green 18%, blue 25%);
+			background-size: 488px 105px, 950px 105px;
+			background-position: 0px 0, 380px 0;
+			background-origin: padding-box, padding-box;
+			color: #fff;
+			#padding: 40px 200px;			
+			}
+		.cart{
+			#background :#808080;
+			text-align: center;
+			padding: 5px;
+			border-radius: 5px;
+			font-size: 10px;
+			display:inline-block;
+			border : none;
+			margin-right : 60px;
+			#padding-right: 100px;
+			width : auto;			
+		}
+		
+		.ws_head{
+			text-transform:uppercase;
+			display: inline-block;
+			margin-right : 120px;
+			font-weight: bold;
+			font-size: 20px;
+			}			
+			
+		.search_layer{
+			display: inline-block;
+			#margin-right : 100px;
+			}	
+			
+		.cart img{
+			top: 40px;
+			left: 210px;
+			position: absolute;			
+			width:60px;
+			height:90px;
+			}	
+		
+		.cart_layer .cart{
+			margin-left: 260px;
+			
+			#position :relative;
+			#background: blue;
+			}
+			
+		.go_btn{
+			border-radius:5px;
+			padding: 5px;
+			margin-left:2px;
+			background: orange;
+			border: none;
+			}
+		.check_btn{
+			border-radius:5px;
+			padding: 5px;
+			margin-left:2px;
+			background: #FF2908;
+			border: none;
+			}
+		.search_box{
+			border-radius:5px;
+			background: ;
+			}
+			
+		.items_count{
+			width: 120px;
+			display:block;
+			font-weight: bold;
+			#font-size : 8px;
+			word-wrap: break-word;
+			margin-top: 30px;
+			padding-right: 100px;
+			text-align: right;	
+				}
+				
+		.menu {				
+				background: #9E1002; #linear-gradient(to bottom, #FF2908 0%, #FFB70F 100%);
+				height :40px;
+				width: 100%;				
+				margin-left:auto;
+				margin-right:auto;
+				margin-top: -40px;	
+				#margin-bottom: 10px;
+			}
+		.menu ul li{
+				display:inline-block;
+				color: #fff;
+				font-weight: bold;
+				margin-right: 10px;
+				padding: 5px;
+			}
+		.menu ul li.active{
+				background: linear-gradient(to bottom, #FF6160 0%, #9E1002 100%);
+				#border: 1px solid #FF2908;
+				border: none;
+				color: #000;
+			}
+		.menu ul li:hover{
+				background: linear-gradient(to bottom, #FF6160 0%, #9E1002 100%);
+				#border: 1px solid #FF2908;
+				border: none;
+				color: #000;
+			}
+		.content{
+			background : linear-gradient(to bottom, #5B5851 0%, #FFFFFF 100%);
+			padding-top: 20px;
+			#height : auto;
+			#width: 100%;			
+			}
+		.main_div{
+			border-radius : 15px 15px;
+			width: 70%;
+			height: auto;
+			#margin-top: 10px;
+			margin-left:auto;
+			margin-right:auto;
+			border: 10px solid #fff;
+			#position: absolute;
+			
+			}
+			
+		.offer_div{
+			background: linear-gradient( to bottom, #48B5EE 0%, #FFFFFF 100%);
+			border-radius : 15px 15px;
+			height: 150px;			
+			}
+		
+		.offer_type{
+				font-size: 30px;
+				font-weight: bold;
+				text-transform:uppercase;				
+				text-align: justify;
+				padding-top: 30px;
+				margin-left: 50px;
+				color: #fff;
+				margin-bottom: 0px;
+			}
+		.sale_font{
+				font-size: 100px;
+				font-weight: bold;
+				text-transform:uppercase;				
+				text-align: justify;
+				margin-left: 50px;
+				margin-top:-35px;
+				color: #9E1002;
+				position: relative;   
+			}
+		.sale_font span{
+			 height: 50%; 
+			position: absolute;
+			color:#FF6160;
+			overflow: hidden; 
+			
+			}
+			
+		.green_bed{
+			background: linear-gradient(to bottom, #CCDE8C 0%, #2B2B29 100%);
+			height: 50px;
+			width: inherit;
+			margin-top:-35px;
+			}
+			
+		.green_bed .img1{
+			top: 260px;
+			left: 610px;
+			position: absolute;			
+			width:60px;
+			height:90px;
+			}	
+		.green_bed .img2{
+			top: 260px;
+			left: 710px;
+			position: absolute;			
+			width:60px;
+			height:90px;
+			}	
+		.green_bed .img3{
+			top: 260px;
+			left: 810px;
+			position: absolute;			
+			width:60px;
+			height:90px;
+			}	
+
+		.offer_product{
+			background: #2B2B29;
+			height: 50px;
+			width: inherit;
+			#margin-top:-35px;			
+			}
+		.prd_name{
+				color: yellow;
+				display: inline-block;
+				width: 250px;
+				font-weight: bold;
+				font-size : 30px;
+				text-align: justify;
+				padding-left: 5px;
+				}
+		.offer_product .prd_desc{
+				color: #fff;
+				display: inline-block;
+				width: 550px;
+				font-weight: bold;
+				font-size : 10px;
+				text-align: justify;
+				padding-left: 5px;
+				}
+    </style>    
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div class="outer_layer" >
+			<div class="top_layer">
+				<div class="outer_box">Account Sign-in</div> 
+				<div class="outer_box">Register</div> 
+				<div class="outer_box">Buyer's Guide</div> 
+				<div class="outer_box">About</div> 
+				<div class="outer_box">Blog</div> 
+				<div class="outer_box">Contact</div> 
+				<div class="outer_box1" style="margin:1px 5px;"><img src="img/phone_1.png"/><phone>+91-9095739367</phone></div> 
+				<div class="outer_box1" ><img src="img/chat1.png"/>Live Help</div>
+				<div class="outer_box1" ><img src="img/flag_india.png"/><img src="img/flag_usa.png"/></div>
+			</div>
+	        <!-- cart_layer starts here-->
+			<div class="cart_layer">
+				<div class="cart">
+					<div class="items_count">
+						<img src="img/shopping_basket.png">0 Items in your Cart
+						<button class="check_btn" style="margin: 2px;">Checkout</button>
+					</div>
+				</div>
+				<div class="ws_head">Ecommerce Website</div>
+				<div class="search_layer"><div><input type="text" name="search_fields" id="search_fields" class="search_box" value="Search Website"/><button class='go_btn'>Go</button></div></div>
+			</div>
+			<!-- cart layer ends here -->
+			<!-- menu div starts here -->
+			<div class='menu' align='center'>
+				<ul>
+					<li class='active'>
+						Home
+					</li>
+					<li>
+						Latest Arrivals
+					</li>
+					<li>
+						Men's
+					</li>
+					<li>
+						Women's
+					</li>
+					<li>
+						Kids
+					</li>
+					<li>
+						Brands
+					</li>
+					<li>
+						Sale
+					</li>
+					<li>
+						Gift Cards
+					</li>
+					<li>
+						Freebies
+					</li>
+					<li>
+						Feedback
+					</li>
+				</ul>
+			</div>			
+        </div>
+        <!-- outer_layer Ends here -->
+        <div class="content">
+			<div class="main_div" align="center">
+				<!-- offer_div starts here -->
+				<div class="offer_div">
+					<div class="offer_type">Festival offer</div>
+					<div class="sale_font"><span>SAle</span>SAle</div>
+					<div class="green_bed">
+						<img class="img1" src="img/t-shirt.png"/>
+						<img class="img2" src="img/t-shirt.png"/>
+						<img class="img3" src="img/t-shirt.png"/>
+						
+					</div>
+					<div class="offer_product">
+						<div class="prd_name">Product Name</div>
+						<div class="prd_desc">This is the product got a discount of 20 %. Only 2500 rupees only.</div>
+					</div>
+				</div>
+				<!-- offer_div ends here -->
+				<div class="product_content">
+					<div class="side_menu_divs">
+						<div class="sidemenu">
+							<ul>
+								<li class="header">
+									Browse Categories
+									
+								</li>
+								<li>
+									Fashion Apparles
+									<div class="separator"></div>
+								</li>
+								<li>
+									Classical Goods
+									<div class="separator"></div>
+								</li>
+								<li>
+									Garden Goods
+									<div class="separator"></div>
+								</li>
+								<li class="footer"> 
+									Clothes
+								</li>
+							</ul>
+						</div>
+						<div class="sidemenu_joinus">
+							<ul>
+								<li class="header">
+									<div class="newsletter">
+										Join our newsletter list to get the latest updates
+										<input type="text" class="newsletter_text" id="email_subscription" name="email_subscription"/>
+										<button class="join_now_btn">Join Now</button>
+									</div>
+									
+								</li>
+								<div class="separator"></div>
+								<li>
+									<img src="img/social_twitter.png"/> Follow us on Twitter 
+									
+								</li>
+								<div class="separator"></div>
+								<li>
+									<img src="img/social_facebook.png"/> Become our fan on Facebook
+								</li>
+								<div class="separator"></div>
+								<li>
+									<img src="img/social_linked_in.png"/> Connect with us on LinkedIn
+								</li>
+								<div class="separator"></div>
+								<li class="footer">
+									<img src="img/gmail.png"/> Send us your Email enqueries
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="product_divs">						
+						<div class="filter_div">
+							Sort by: <select name="order_by">
+										<option value="asc"> Low price to High </option>
+										<option value="desc">High price to Low </option>
+										<option value="desc">Popularity </option>										
+									</select>
+							<!--Brand : <select name="brandName">
+									<option value="maruti"> Maruti Suzuki </option>
+									<option value="hyundai">Hyundai </option>
+								</select>
+							Product : <select name="productName">
+									<option value="swift">Swift </option>
+									<option value="ritz"> Ritz</option>
+								</select>-->
+							<div class="items_per_page" align='right' style="margin-left:250px;"> 
+								Items per page 
+									<select name="items_per_page" id="items_per_page">
+										<option value="20">20</option>
+										<option value="40">40</option>
+										<option value="60">60</option>
+										<option value="80">80</option>
+										<option value="100">100</option>
+									</select>
+							</div>
+						
+						</div>
+						<!-- End of filter_div --> 
+						<div class="heading1">
+							Our Products
+						</div>
+						<style>
+							.product_shelves{
+								.margin: 5px;
+								
+								}
+							.product_div{
+								display: inline-block;
+								#border:1px dashed #000;
+								margin: 5px;
+								padding:5px;
+								}
+							.product_div img{
+								height:100px;
+								width:100px;
+								text-align:center;
+							}
+							.product_name{
+								font-weight:bold;
+								font-size:12px;
+								
+							}
+							
+							.product_price{
+								#margin-left: 10px;
+								color: red;
+								font-weight:bold;
+								font-size:12px;
+								}
+						</style>
+						<div class="product_shelves">
+							<div class="product_div">
+								<img src="img/t-shirt.png"/>
+								<div class="product_name">Product Name</div>
+								<span style="font-weight:bold;font-size:12px;">Price</span><span class="WebRupee" style="color:red;margin-left:5px;font-weight:bold;font-size:12px;">Rs.</span></style> <span class="product_price">55</span>
+							</div><div class="product_div">
+								<img src="img/t-shirt.png"/>
+								<div class="product_name">Product Name</div>
+								<span style="font-weight:bold;font-size:12px;">Price</span><span class="WebRupee" style="color:red;margin-left:5px;font-weight:bold;font-size:12px;">Rs.</span></style> <span class="product_price">55</span>
+							</div><div class="product_div">
+								<img src="img/t-shirt.png"/>
+								<div class="product_name">Product Name</div>
+								<span style="font-weight:bold;font-size:12px;">Price</span><span class="WebRupee" style="color:red;margin-left:5px;font-weight:bold;font-size:12px;">Rs.</span></style> <span class="product_price">55</span>
+							</div><div class="product_div">
+								<img src="img/t-shirt.png"/>
+								<div class="product_name">Product Name</div>
+								<span style="font-weight:bold;font-size:12px;">Price</span><span class="WebRupee" style="color:red;margin-left:5px;font-weight:bold;font-size:12px;">Rs.</span></style> <span class="product_price">55</span>
+							</div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+			</div>
+			<!-- main_div ends here -->
+			</div>
+			<!-- content ends here -->
+			<div class="secure_shopping">
+				<div class="div1">
+					<div class="div2">Hai</div>
+					<div class="div3">Bye</div>
+				</div>
+			</div>
+			<div class="footer1">
+				
+			</div>
+
+        <style>
+			.div1{
+				width: 85%;
+				text-align:center;
+				display:inline-block;
+				}
+			.div3,.div2{
+				width: 40%;
+				display:inline-block;
+				}	
+				
+			.secure_shopping{
+				background:linear-gradient(to bottom, #0F0100,#350701);
+				color:#fff;
+				width:100%
+				height:150px;
+				padding:10px;
+				margin-top:10px;
+				}
+			.footer1{
+				background: linear-gradient(to bottom,#A81704,#610D02);
+				color: #fff;
+				font-weight: bold;
+				width:100%;
+				height:200px;
+				}
+			.product_content{
+				background: #fff;
+				#display: inline-block;
+				#width:100%;
+				margin-top:90px;
+				text-align:left;
+				}
+			.side_menu_divs{
+				display: inline-block;
+				margin-left: -40px;
+				width:250px;
+				#background:skyblue;
+				border:none;
+				#padding:5px;
+				height:300px;
+				position:absolute;
+				
+				}
+				
+			.side_menu_divs .side_menu{
+				display: block;
+				
+				#padding:5px;
+				height:auto;
+				}
+			.sidemenu ul li{
+				display:block;
+				padding:5px ;
+				background: #FFEEb8;
+				height:auto;
+				text-align: justify;
+				}	
+				
+			.sidemenu ul li.header{
+				background: linear-gradient(to bottom, #FF6160 0%, #9E1002 100%);
+				border-radius: 15px 15px 0 0;
+				text-align: center;
+				font-weight:bold;
+				color:#fff;
+				}
+				
+			.separator{
+				border: 0;
+				height: 1px;
+				background: #fff;
+				#background-image: -webkit-linear-gradient(left, #ccc, #333, #ccc);
+				#background-image: -moz-linear-gradient(left, #ccc, #333, #ccc);
+				#background-image: -ms-linear-gradient(left, #ccc, #333, #ccc);
+				#background-image: -o-linear-gradient(left, #ccc, #333, #ccc);
+				}
+				
+			.sidemenu ul li.footer{
+				#background: linear-gradient(to bottom, #FF6160 0%, #9E1002 100%);
+				border-radius: 0px 0px 15px 15px;
+				
+				}
+				
+				.sidemenu_joinus{
+					#margin-left: -40px;
+					border:none;
+					text-align: center;
+					}
+					
+				.sidemenu_joinus ul li {
+					display:block;
+					padding:5px ;
+					background: #B6B6B6;#F5F5F3;
+					height:auto;
+					#text-align: justify;
+					}
+				.sidemenu_joinus ul li.header{
+					border-radius: 5px 5px 0 0;
+					}
+					
+				.sidemenu_joinus ul li img{
+					height:40px;
+					width: 40px;
+					#padding: 5px;
+					}
+				
+				.sidemenu_joinus ul li.footer{
+					border-radius: 0px 0px 15px 15px;
+					}
+				.newsletter_text{
+					width: 180px;
+					margin: 5px;					
+					}
+				
+				.join_now_btn{
+					background-image: linear-gradient(to bottom, #FF6160 0%, #9E1002 100%);
+					border-radius: 5px;
+					text-align: center;
+					margin-right:auto;
+					margin-left:auto;
+					padding:5px;
+					color:#fff;
+					border:none;
+					}
+			
+			.product_divs{
+				display: inline-block;
+				background:#fff;
+				width: 600px;
+				height:550px;
+				text-align:justify;
+				#padding-left:10px;
+				margin: 15px;
+				position:relative;
+				top: 20px;
+				left: 200px;
+				}
+			.filter_div{
+				display:block;				
+				font-size: 10px;
+				font-weight: bold;
+				}
+				
+			.order_by_div{
+				display:inline-block;
+				
+				}	
+			.items_per_page{
+				display:inline-block;
+				text-align: right;
+				#margin-left : 40px;
+				}
+			.heading1{
+				font-size: 20px;
+				font-weight: bold;
+				text-transform:uppercase;
+				margin: 10px 0 10px 0;
+				}
+        </style>
+		
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        
+		<script>
+			var items_per_page=0;
+			items_per_page = parseInt($("#items_per_page").val());
+			
+			//alert($("#items_per_page").val());
+			
+			var items_per_row=4;
+			//alert(items_per_page);
+			var productHash=[];
+			
+			product={};
+			for(var i=0;i<30;i++){
+				product["id"]= i+1;
+				product["prd_name"]= "T-Shirt";
+				product["price"]= "55";
+				product["popularity"]= "";
+				product["img"]="img/t-shirt.png"
+				productHash.push(product);
+				//alert(product["img"]);
+				}
+			
+			showAllProducts(items_per_page,productHash,items_per_row);
+
+			$(function(){
+				$("#items_per_page").change(function(){
+					items_per_page = parseInt($("#items_per_page").val());
+					showAllProducts(items_per_page,productHash,items_per_row);
+					})
+				
+				$(".product_div").click(function(){
+					alert(this.$("#pid").val());
+					});
+				});
+				
+			
+			
+			
+			function showAllProducts(_items_per_page,_productHash,_items_per_row){
+				var totProducts=_productHash.length;
+				var remainder= 0;
+				var totPages = 0;
+				var totIpr = 0;
+				var remainIpr=0;
+				if( totProducts >= _items_per_page){
+					 remainder = totProducts % _items_per_page;
+					 totPages =  totProducts / _items_per_page;
+					}
+				else{
+					totPages=1;
+					remainder=totProducts;
+					}
+				if(_items_per_row >= totProducts){
+					totIpr=1;					
+					remainIpr= totProducts
+					}
+					else{
+						totIpr = totProducts / _items_per_row;
+						remainIpr = totProducts % _items_per_row;
+						}
+					
+					var productCount= 0;
+					var productString = "";
+					var temp=0;
+					for(var pageCount = 0;pageCount < totPages; pageCount++){
+						//for(var divCount=0;divCount < totIpr;divCount++ ){								
+							for( var pro_cnt = productCount; pro_cnt < totProducts;  pro_cnt++){
+								if(temp < _items_per_page){
+								productString += productOut(productHash[pro_cnt]);
+								productCount++;
+								temp++;
+								}
+							}
+								
+						}
+						//}
+						$(".product_shelves").html(productString);
+				}
+				
+				function productOut(prd){
+					var str="";
+					str="<div class='product_div'><input type='hidden' name='pid' id='pid' value='"+prd["id"]+"'/><img src='"+ prd["img"] +"'/><div class='product_name'>"+prd["prd_name"]+"</div><span style='font-weight:bold;font-size:12px;'>Price</span> <span class='WebRupee' style='color:red;margin-left:5px;font-weight:bold;font-size:12px;'>Rs.</span><span class='product_price'>"+prd["price"]+"</span></div>"
+					return str;
+					}
+			
+		</script>
+
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+    </body>
+</html>
