@@ -141,7 +141,8 @@ textarea {
 		}
 		
 		.shopping_cart{
-			width: 100%;
+			margin-bottom: 20px;
+			width: 72%;
 			height: auto;
 			background: linear-gradient(to bottom, #DD767A 0%, #CD2927 100%);
 			text-align:center;
@@ -199,18 +200,39 @@ textarea {
 			}	
 		
 		.cart_layer .cart{
-			margin-left: 260px;
-			
+			margin-left: 260px;			
 			#position :relative;
 			#background: blue;
 			}
 			
+		.qty_ord{
+			background:none;
+			border:none;
+			width: 30px;
+			text-align:right;
+			}
+		
 		.go_btn{
 			border-radius:5px;
 			padding: 5px;
 			margin-left:2px;
 			background: orange;
 			border: none;
+			font-weight: bold;
+			font-size:12px;
+			}
+			
+		#tot_qty_purc{
+			
+		}
+		#cancel_btn{
+			border-radius:5px;
+			padding: 5px;
+			margin-left:2px;
+			background: #ccc;
+			border: none;
+			font-weight: bold;
+			font-size:12px;
 			}
 		.check_btn{
 			border-radius:5px;
@@ -265,11 +287,13 @@ textarea {
 			}
 		.content{
 			background : linear-gradient(to bottom, #5B5851 0%, #FFFFFF 100%);
-			padding-top: 20px;
+			
+			#padding-top: 20px;
 			#height : auto;
 			#width: 100%;			
 			}
 		.main_div{
+		
 			border-radius : 15px 15px;
 			width: 70%;
 			height: auto;
@@ -311,39 +335,65 @@ textarea {
 			 height: 50%; 
 			position: absolute;
 			color:#FF6160;
-			overflow: hidden; 
-			
+			overflow: hidden;			
 			}
+		.edit_btn_checkout{
+			color: green;
+			font-size:10px;
+			font-weight:bold;
+		}
+		
+		.del_btn_checkout{
+			color: red;
+			font-size:10px;
+			font-weight:bold;
+		}
+		
+		#pay_cancel{
+			margin-left: 38%;
+			margin-bottom: 10px;
+			padding-top: 10px;
+		}
 			
+		#cartTab{
+			text-align: center;
+		}	
+		td.right{
+			text-align: right;
+		}
 		.green_bed{
 			background: linear-gradient(to bottom, #CCDE8C 0%, #2B2B29 100%);
 			height: 50px;
 			width: inherit;
 			margin-top:-35px;
+			}			
+		.sale_font .img1{
+			#top: 260px;
+			#left: 610px;
+			#position: absolute;
+			margin-top: -50px;			
+			margin-right: 40px;			
+			width:60px;
+			height:100px;
+			}			
+		.sale_font .img2{
+			#top: 260px;
+			#left: 710px;
+			#position: absolute;			
+			margin-top: -50px;			
+			margin-right: 40px;			
+			width:60px;
+			height:100px;
+			}	
+		.sale_font .img3{
+			#top: 260px;
+			#left: 810px;
+			#position: absolute;		
+			margin-top: -50px;				
+			margin-right: 40px;			
+			width:60px;
+			height:100px;
 			}
-			
-		.green_bed .img1{
-			top: 260px;
-			left: 610px;
-			position: absolute;			
-			width:60px;
-			height:90px;
-			}	
-		.green_bed .img2{
-			top: 260px;
-			left: 710px;
-			position: absolute;			
-			width:60px;
-			height:90px;
-			}	
-		.green_bed .img3{
-			top: 260px;
-			left: 810px;
-			position: absolute;			
-			width:60px;
-			height:90px;
-			}	
-
 		.offer_product{
 			background: #2B2B29;
 			height: 50px;

@@ -34,8 +34,9 @@
 			<div class="cart_layer">
 				<div class="cart">
 					<div class="items_count">
-						<img src="img/shopping_basket.png">0 Items in your Cart
-						<button class="check_btn" style="margin: 2px;">Check Out</button>
+						<div id="zero_count"><img src="img/shopping_basket.png">No Items in your Cart</div>
+						<div id="more_count" style="display:none;"><img src="img/Full-shopping-cart.png"><span id="count"></span> Items in your Cart</div>
+						<button class="check_btn" style="margin: 2px;" id="shop_check_out">Check Out</button>
 					</div>
 				</div>
 				<div class="ws_head">Ecommerce Website</div>
@@ -77,19 +78,25 @@
 					</li>
 				</ul>
 			</div>
-			<div class="shopping_cart">No items in the shopping cart...</div>			
+						
         </div>
+        
         <!-- outer_layer Ends here -->
         <div class="content">
+			<div class="shopping_cart">				
+				No items in the shopping cart...
+			</div>
 			<div class="main_div" align="center">
 				<!-- offer_div starts here -->
 				<div class="offer_div">
 					<div class="offer_type">Festival offer</div>
-					<div class="sale_font"><span>SAle</span>SAle</div>
+					<div class="sale_font"><span>SAle</span>SAle<span id='advt_img' style="margin:20px;">
+							<img class="img1" src="img/t-shirt.png"/>
+							<img class="img2" src="img/t-shirt.png"/>
+							<img class="img3" src="img/t-shirt.png"/>
+						</span></div>
 					<div class="green_bed">
-						<img class="img1" src="img/t-shirt.png"/>
-						<img class="img2" src="img/t-shirt.png"/>
-						<img class="img3" src="img/t-shirt.png"/>
+						
 						
 					</div>
 					<div class="offer_product">
@@ -272,7 +279,7 @@
 							<li>sundays & holidays closed</li>
 							<li>Powered By <span style="font-weight:bold;font-size:12px;color:yellow;">JasmineSoft</span></li>
 						</ul>
-					</div>
+					q</div>
 				</div>
 			</div>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -285,6 +292,7 @@
 			var selected_product;
 			var ipa;
 			var productHash=[];
+			var tot_prd;
 			for(var i=0;i<5;i++){
 				product={};	
 				product["id"]=i;
@@ -298,12 +306,100 @@
 			}
 
 			$(function(){
+				//localStorage.removeItem("purchase");
 				showAllProducts(items_per_page,productHash,items_per_row);
 				$.getJSON("http://smart-ip.net/geoip-json?callback=?", function(data){
 				   ipa=data.host;
+				});				
+				now = $.now();				
+				if(typeof localStorage["purchase"] != "undefined" ){
+					var purchaseObj= JSON.parse(localStorage["purchase"]);
+					tot_prd=purchaseObj.all_products;
+					if(tot_prd.length > 0){
+						$("#zero_count").hide();
+						$("#more_count").show();
+						$("#count").text(tot_prd.length);
+					}else{
+						$("#zero_count").show();
+						$("#more_count").hide();
+						$("#count").text(tot_prd.length);
+						}
+					str = "<div id='pay_cancel'><button class='go_btn' id='pay_btn'>Pay</button><button id='cancel_btn'>Cancel</button></div><table align='center' id='cartTab'><tr><th>S.No</th><th>Name</th><th>Price/Qty in (<span class='WebRupee' style='margin-left:5px;font-weight:bold;font-size:15px;'>Rs.</span>)</th><th>Qty</th><th>Price</th><th>Action</th></tr>";
+					counter=1;
+					for(var ind=0;ind<tot_prd.length;ind++){
+						prd = tot_prd[ind];
+						str += "<tr><td>"+counter+"</td>";
+						str += "<td>"+prd.prd_name+"</td>";
+						str += "<td class='right'><div class='prd_price_div'>"+prd.prd_price+"</div></td>";
+						str += "<td class='right'><input type='text' class='qty_ord' maxlength='3' size='3' id= 'qty_ord"+counter+"' value='"+prd.quantity_ordered+"' readonly/></td>";
+						str += "<td class='right'><div class='net_total_price_div'>"+prd.net_total_price+"</div></td>";
+						str += "<td><button class='edit_btn_checkout' href='"+counter+"'>Edit</button><button class='del_btn_checkout' href='"+counter+"'>Delete</button></td>";
+						str += "</tr>"
+						$.each(prd, function(key, value){
+							console.log(key + ' = ' + value);
+						});
+							//console.log(key + ' = ' + value);
+							counter++;
+
+					}
+					str += "<tr><td  colspan='3'>Total</td><td class='right'><div id='tot_qty_purc'>"+purchaseObj.total_quantity_purchased+"</div></td>";
+					str +=  "<td class='right'><div id='tot_net_purc_amt'>"+purchaseObj.total_net_purchase_amount+"</div></td></tr>";
+					str += "</table>";
+					$(".shopping_cart").html(str);
+				}
+				
+				$(".qty_ord").blur(function(){
+					$(this).attr('readonly','readonly');
+					obj = $(this).closest('tr');
+					/*var attr = $(this).attr('readonly');
+					if (typeof attr == 'readonly' && attr !== false) {
+						alert("attr is updated");
+						}
+					else{
+						alert("real problem here....");
+						}*/	
+					tot_price= parseInt($(this).val())*parseFloat(obj.find('td .prd_price_div').text());
+					obj.find('td .net_total_price_div').text(tot_price);
+					row=this.id.split("qty_ord")[1];
+					product_upd= tot_prd[row-1];
+					product_upd.quantity_ordered= parseInt($(this).val());
+					product_upd.net_total_price = tot_price;
+					recalcTotal(tot_prd);
+					
+					purc = JSON.parse(localStorage["purchase"]);
+					//alert(purc.total_quantity_purchased);
+					$("#tot_qty_purc").text(purc.total_quantity_purchased);
+					$("#tot_net_purc_amt").text(purc.total_net_purchase_amount);
+					//window.location.href=window.location.href;
+					//alert($(this).closest('tr').find('td .net_total_price_div').text());
+					//alert($(this).val());
+					});
+				
+				$(".edit_btn_checkout").click(function(){
+					//alert('i love jasmine jainambi');
+					ele_id = $(this).closest("tr").find('td .qty_ord').attr('id');
+					ele = document.getElementById(ele_id);
+					$(ele).removeAttr("readonly");
+					$(ele).focus();
+					$(ele).select();
+					//alert(ele.value);
 				});
 				
-				now = $.now();
+				$(".del_btn_checkout").click(function(){
+					//alert('i love jasmine jainambi');
+					//alert($(this).attr("href"));
+					//product_del= tot_prd[$(this).attr("href")-1];					
+					tot_prd.splice(parseInt($(this).attr("href"))-1, 1);
+					recalcTotal(tot_prd);
+					$(this).closest("tr").remove();
+					window.location.href = window.location.href;					
+					});
+				
+				$("#cancel_btn").click(function(){
+					//alert('hi');
+					localStorage.removeItem("purchase");
+					window.location.href=window.location.href;
+					});
 				
 				$("#items_per_page").change(function(){
 					items_per_page = parseInt($("#items_per_page").val());
@@ -318,7 +414,9 @@
 						alert("Color should be selected");
 						return false;
 						}
-						
+					
+					
+					
 					if($("#tab tr").length>1){
 						if(Modernizr.localstorage){
 							var product= {};
@@ -339,32 +437,38 @@
 							product.ordered_time = now;
 							product.color = classArray[1].trim();
 							product.size = $('#selected_size_div').text();
-							allProducts.push(product);
-						
-							purchase = localStorage["purchase"];
 							
-							if(typeof purchase != "undefined" ){
+							if(typeof localStorage["purchase"] != "undefined" ){
+								purchase = JSON.parse(localStorage["purchase"]);
+								allProducts = purchase.all_products
+								allProducts.push(product);
 								purchase.all_products = allProducts
 								purchase.ipa = ipa;
 								//purchase.purchased_time = "";
 								//purchase.purchased_via = "";
+								purchase.total_quantity_purchased +=  parseInt(product.quantity_ordered);
 								purchase.total_discount_amount  +=  product.prd_discount_in_price;
 								purchase.total_net_purchase_amount +=product.net_total_price ;
 								purchase.total_gross_purchase_amount +=product.gross_total_price;
-								localStorage["purchase"] = purchase;
+								localStorage["purchase"] = JSON.stringify(purchase);
+								console.log(localStorage["purchase"],"Purchase Updated....")
 								alert("cart updated");
+								window.location.href=window.location.href;
 								}else{
 								purchase = {};
+								allProducts.push(product);
 								purchase.all_products = allProducts
 								purchase.ipa = ipa;
 								//purchase.purchased_time = "";
-								//purchase.purchased_via = "";
+								//purchase.purchased_via = "";s
+								purchase.total_quantity_purchased =  parseInt(product.quantity_ordered);
 								purchase.total_discount_amount  =  product.prd_discount_in_price;
 								purchase.total_net_purchase_amount =product.net_total_price ;
 								purchase.total_gross_purchase_amount =product.gross_total_price;
-								localStorage.setItem("purchase",purchase);
+								localStorage.setItem("purchase",JSON.stringify(purchase));
 								alert("cart created ");
 								console.log(localStorage["purchase"],"Purchase added....")
+								window.location.href=window.location.href;								
 								}
 							}
 						else{						
@@ -416,7 +520,7 @@
 						s +=  "<td><div id='tot_price"+currRow+"' class='tot_price'></div></td>";
 						s +=  "<td><div id='selected_size_div"+currRow+"'></div></td>";
 						s +=  "<td><div id='selected_colour_div"+currRow+"' align='center'></div></td>";
-						s += "<td><div id='delete_div' align='center'><input type='checkbox' name='check' id='check"+currRow+"' value='"+currRow+"'/></div></td>";
+						//s += "<td><div id='delete_div' align='center'><input type='checkbox' name='check' id='check"+currRow+"' value='"+currRow+"'/></div></td>";
 						s += "</tr>";
 						$("#tab").find("tbody").append(s);
 						//Updating the price 
@@ -472,7 +576,7 @@
 					$(".product_div").colorbox({inline:true, width:"50%",transition:"fade"});
 				});
 				
-				$("input:text").blur(function(){
+				$("#qty").blur(function(){
 					$("#tot_price1").text(parseInt($("#qty").val())*(parseFloat(selected_prd["price"])));
 				});
 					
@@ -491,7 +595,33 @@
 					$('.sidemenu_checkout').css('margin-top', margintop);
 					
 				}*/
+				
+				
 			});
+			
+			function recalcTotal(tot_prd){
+				if(typeof localStorage["purchase"] != "undefined"){
+						purchaseObj = JSON.parse(localStorage["purchase"]);
+						purchaseObj.all_products = tot_prd;							
+						qty_ordered=0;
+						disc_price=0;
+						net_total=0;
+						gross_total=0;
+						for(var index=0; index < tot_prd.length; index++){
+							 product= tot_prd[index];
+							 qty_ordered += parseInt(product.quantity_ordered);
+							 disc_price += parseInt(product.prd_discount_in_price);
+							 net_total += parseInt(product.net_total_price);
+							 gross_total += parseInt(product.gross_total_price);
+							}
+						purchaseObj.total_quantity_purchased =  qty_ordered;
+						purchaseObj.total_discount_amount  =  disc_price;
+						purchaseObj.total_net_purchase_amount =net_total;
+						purchaseObj.total_gross_purchase_amount = gross_total;
+						
+						localStorage.setItem("purchase",JSON.stringify(purchaseObj));
+					}
+				}
 				
 			function showAllProducts(_items_per_page,_productHash,_items_per_row){
 				var totProducts=_productHash.length;
@@ -660,9 +790,9 @@
 								<th>
 									Colour
 								</th>
-								<th>
+								<!--<th>
 									Delete
-								</th>
+								</th>-->
 							</tr>
 							<tr>
 									<td class="sno">1.</td>
@@ -671,7 +801,7 @@
 									<td><div class="tot_price" id="tot_price1"></div></td>
 									<td><div id="selected_size_div"></div></td>
 									<td><div id="selected_colour_div" align="center"></div></td>
-									<td><div id="delete_div" align="center"><input type="checkbox" name="check" id='check1' value='1' checked='unchecked' value=""/></div></td>
+									<!--<td><div id="delete_div" align="center"><input type="checkbox" name="check" id='check1' value='1' checked='unchecked' value=""/></div></td> -->
 								</tr>										
 						</table>						
 					<!--selected_prd_desc ends here -->
