@@ -21,7 +21,7 @@
         <!-- Add your site or application content here -->
         <div class="outer_layer" >
 			<div class="top_layer">
-				<div class="outer_box">Account Sign-in</div> 
+				<div class="outer_box"><div id='sign_up' href='#login_pop'>Account Sign-in</div></div> 
 				<div class="outer_box">Register</div> 
 				<div class="outer_box">Buyer's Guide</div> 
 				<div class="outer_box">About</div> 
@@ -661,7 +661,7 @@
 							<li>sundays & holidays closed</li>
 							<li>Powered By <span style="font-weight:bold;font-size:12px;color:yellow;">JasmineSoft</span></li>
 						</ul>
-					q</div>
+					</div>
 				</div>
 			</div>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -960,8 +960,14 @@
 					$("#selected_prd_img img")[0].src= selected_prd["img"];
 					$("#price_per_quantity1").text(selected_prd["price"]);
 					$("#tot_price1").text(parseInt($("#qty").val())*(parseFloat(selected_prd["price"])));
-					$(".product_div").colorbox({inline:true, width:"50%",transition:"fade"});
+					$(this).colorbox({inline:true, width:"50%",transition:"fade"});
 				});
+				
+				
+				
+				$("#sign_up").click(function(){
+					$(this).colorbox({inline:true, width:"60%",transition:"fade"});
+					});
 				
 				$("#qty").blur(function(){
 					$("#tot_price1").text(parseInt($("#qty").val())*(parseFloat(selected_prd["price"])));
@@ -978,7 +984,7 @@
 					$("#paypal")[0].src = preloads[0];
 					$("#checkout")[0].src = preloads[1];
 				
-				$(".check_btn").click(function(){
+				$("#shop_check_out").click(function(){
 					$(".shopping_cart").toggle();
 				});
 				/*var paypalHeight = $('#paypal img').height();
@@ -1131,6 +1137,7 @@
 					}		
 
 			</style>
+			<!--  Product popup-->
 			<div id="explore_product" >
 				<div id="products_heading" style="text-align:center;font-weight:bold;font-size: 20px;"></div>
 				<div id="selected_prd_content">
@@ -1200,6 +1207,78 @@
 				</div>
 			</div>
 		</div>
+		
+		<!-- Login Popup-->
+		<div style='display:none;'>
+			<style>
+				#cboxLoadedContent{
+					background: #ccc;
+					}	
+			</style>
+			<div id='login_pop'>
+				<div id='login_block'>
+					<h3> Login to the Ecom Site</h3>
+					<div style='display:inline-box;width:350px;margin:10px;'>
+						<label for='email_id'>Email</label>
+						<input type='text' id='email_id' name='email_id' style='float:right;'/>
+					</div>
+					<div style='display:inline-box;width:350px;margin:10px;'>
+						<label for='p_word'>Password</label>
+						<input type='password' id='p_word' name='p_word' style='float:right;'/>
+					</div>
+					<div style="display:inline-box;width:350px;" align='center'>
+						<button id='submitBtn'>Log In</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Register popup -->
+		<div style='display:none;'>
+			<style>
+				#cboxLoadedContent{
+					background: #ccc;
+					}	
+			</style>
+			<div id='register_pop'>
+				<div id='login_block'>
+					<h3> Login to the Ecom Site</h3>
+					<div style='display:inline-box;width:350px;margin:10px;'>
+						<label for='email_id'>Email</label>
+						<input type='text' id='email_id' name='email_id' style='float:right;'/>
+					</div>
+					<div style='display:inline-box;width:350px;margin:10px;'>
+						<label for='p_word'>Password</label>
+						<input type='password' id='p_word' name='p_word' style='float:right;'/>
+					</div>
+					<div style="display:inline-box;width:350px;" align='center'>
+						<button id='submitBtn'>Log In</button>
+					</div>
+				</div>
+				<div id='social_signup'>
+					<h3> Not a member yet</h3>
+					<div >
+						<button class='social_button' id='facebook_btn'><span ><img src='img/social_facebook.png'/>Sign up with Facebook</span></button>						
+					</div>		
+					
+					<div>
+						<button class='social_button' id='google_btn'><span><img src='img/social_google.png'/>Sign up with Google&nbsp;&nbsp;&nbsp;</span></button>						
+					</div>		
+					<div>
+						<button class='social_button' id='twitter_btn'><span><img src='img/social_twitter.png'/>Sign up with Twitter&nbsp;&nbsp;</span></button>
+					</div>		
+					<div>
+						<button class='social_button' id='linked_in_btn'><span><img src='img/social_linked_in.png'/>Sign up with LinkedIn</span></button>
+					</div>		
+					
+						(OR)<br />
+					<a href="#">Sign up with Email</a>
+				</div>
+				<br />
+				
+				<a href='#' style='margin-left: 10px;'>Forget your password?</a>
+			</div>
+		</div>
+
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
