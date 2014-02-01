@@ -1,0 +1,13 @@
+function productOut(prd){
+	var str="";
+	str="<div class='product_div' id='"+prd["id"]+"' href='#explore_product'>";
+	str += "<input type='hidden' name='pid' id='pid' value='"+prd["id"]+"'/>";
+	//var imag = "<%#= asset_path "'"+$.trim(prd['img'])+"'" %>";
+	var imag = $.trim(prd['img']);
+	var path_asset = '<%= image_tag 'imag' %>';
+	 path_asset = path_asset.replace('imag',""+imag);
+//	alert(path_asset);
+	str += path_asset+"<div class='product_name'>"+prd["prd_name"]+"</div>";
+	str += "<span style='font-weight:bold;font-size:12px;'>Price</span> <span class='WebRupee' style='color:red;margin-left:5px;font-weight:bold;font-size:12px;'>Rs.</span><span class='product_price'>"+prd["price"]+"</span></div>";
+	return str;
+}

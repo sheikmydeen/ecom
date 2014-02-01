@@ -1,0 +1,1059 @@
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+}
+
+html {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+
+audio,
+canvas,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browse Happy prompt
+   ========================================================================== */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Sheik mydeen's custom styles
+   ========================================================================== */
+		.outer_layer
+		{
+			background: #000000;
+			color: #fff;
+		}
+		
+		.top_layer{
+			text-align:center;
+			}
+				
+		.outer_box{
+			text-align:center;
+			#background :#808080;
+			padding: 5px;
+			border-radius: 5px;
+			font-size: 10px;
+			display:inline-block;
+			border : none;
+			margin-left : 5px;
+			width : auto;			
+		}
+		
+		.outer_box:hover{
+			#background: brown;
+			#font-size : 12px;
+			font-weight:bold;
+			border 	  : 1px #ccc;
+			cursor : pointer;
+		}
+		
+		.outer_box1{
+			#background :#808080;
+			padding: 5px;
+			border-radius: 5px;
+			font-size: 10px;
+			display:inline-block;
+			border : none;
+			margin : none;
+			width : auto;
+			cursor:pointer;
+		}	
+			
+		.outer_box1 img{
+			height: 30px;
+			width :30px;			
+		}
+		
+		.shopping_cart{
+			margin-bottom: 20px;
+			width: 72%;
+			height: auto;
+			background: linear-gradient(to bottom, #DD767A 0%, #CD2927 100%);
+			text-align:center;
+			margin-right:auto;
+			margin-left:auto;
+			display:none;
+			}
+		
+		.cart_layer{
+			width: 100%;				
+			height: 120px;
+			margin-left:auto;
+			margin-right:auto;
+			background-image: linear-gradient(to bottom, #DD767A 0%, #CD2927 100%);
+			background-size: 488px 105px, 950px 105px;
+			background-position: 0px 0, 380px 0;
+			background-origin: padding-box, padding-box;
+			color: #fff;
+			#padding: 40px 200px;			
+			}
+		.cart{
+			#background :#808080;
+			text-align: center;
+			padding: 5px;
+			border-radius: 5px;
+			font-size: 10px;
+			display:inline-block;
+			border : none;
+			margin-right : 60px;
+			#padding-right: 100px;
+			width : auto;			
+		}
+		
+		.ws_head{
+			text-transform:uppercase;
+			display: inline-block;
+			margin-right : 120px;
+			font-weight: bold;
+			font-size: 20px;
+			}			
+			
+		.search_layer{
+			display: inline-block;
+			#margin-right : 100px;
+			}	
+			
+		.cart img{
+			top: 40px;
+			left: 210px;
+			position: absolute;			
+			width:60px;
+			height:90px;
+			}	
+		
+		.cart_layer .cart{
+			margin-left: 260px;			
+			#position :relative;
+			#background: blue;
+			}
+			
+		.qty_ord{
+			background:none;
+			border:none;
+			width: 30px;
+			text-align:right;
+			}
+		
+		.go_btn{
+			border-radius:5px;
+			padding: 5px;
+			margin-left:2px;
+			background: orange;
+			border: none;
+			font-weight: bold;
+			font-size:12px;
+			}
+			
+		#tot_qty_purc{
+			
+		}
+		#cancel_btn{
+			border-radius:5px;
+			padding: 5px;
+			margin-left:2px;
+			background: #ccc;
+			border: none;
+			font-weight: bold;
+			font-size:12px;
+			}
+		.check_btn{
+			border-radius:5px;
+			padding: 5px;
+			margin-left:2px;
+			background: #FF2908;
+			border: none;
+			}
+		
+		.search_box{
+			border-radius:5px;
+			background: #ccc;
+			}
+			
+		.items_count{
+			width: 120px;
+			display:block;
+			font-weight: bold;
+			#font-size : 8px;
+			word-wrap: break-word;
+			margin-top: 30px;
+			padding-right: 100px;
+			text-align: right;	
+			}
+		
+		#twitter_btn{
+			background:#32DEF6;
+			border:#32DEF6;
+		}
+		
+		#facebook_btn{
+			background:#4B6DAA;
+			border:#4B6DAA;
+		}
+		#google_btn{
+			background:#E46145;
+			border:#E46145;
+		}
+		#linked_in_btn{
+			background:#0088B5;
+			border:#0088B5;
+		}
+		
+		.social_button{
+			background: blue;
+			cursor:pointer;
+			color:#fff;
+			padding: 3px;
+			margin-bottom: 5px;
+			width: 260px;
+			border-radius: 5px;
+		}
+				
+		#social_signup{
+			position:relative;
+			top: 10px;
+			left: 480px;
+			display:inline-block;
+			width: 35%;
+			height:auto;
+		}
+		
+		#submitBtn{
+			width: 120px;
+			padding: 5px;
+			border-radius: 5px;
+			background: #0088B5;
+			color: #fff;
+			border: #0088B5 2px solid;
+			margin-left: 30px;
+		}
+		#register_popup{
+			#background: red;
+			padding: 10px;
+		}
+		#login_block{
+			margin-top: -50px;
+			position: absolute;
+			display:inline-block;
+			width: 60%;
+			height:auto;
+			top: 100px;
+			#left: 30px;
+		}
+		#login_pop{
+			#margin-top: -50px;
+			#display:none;
+			padding:10px; 
+			background:#fff;
+			height:400px;
+			width:97%;
+		}
+		.menu {				
+				background: #9E1002;
+				height :40px;
+				width: 100%;				
+				margin-left:auto;
+				margin-right:auto;
+				margin-top: -50px;	
+				#margin-bottom: 10px;
+			}
+		.menu ul li{
+				display:inline-block;
+				color: #fff;
+				font-weight: bold;
+				margin-right: 10px;
+				padding: 5px;
+			}
+		.menu ul li.active{
+				background: linear-gradient(to bottom, #FF6160 0%, #9E1002 100%);
+				#border: 1px solid #FF2908;
+				border: none;
+				color: #000;
+			}
+		ul li ul.submenu{
+			margin-top: 50px;
+			background: #fff;
+			border: 1px solid red;
+			height: auto;
+			width: 500px;
+			display: none;
+			}
+		
+		ul li ul.submenu li{
+				display:block;
+				color: #000;
+				width: auto;
+				font-weight: normal;
+				margin-right: 10px;
+				padding: 5px;
+			}
+		.heading{
+			font-weight:bold;
+			font-size: 12px;
+			text-align:center;
+		}
+		
+		.listing{
+			font-weight:normal;
+			text-align:left;
+		}
+		
+		.wep_popup {
+			#font-weight:bold;
+			font-size: 12px;
+			clear: left;
+			left: 182px;
+			position: absolute;
+			top: 128px;
+			width: 85%;
+			height: auto;
+			z-index: 100100;
+		}	
+		.menu ul li:hover{
+				background: linear-gradient(to bottom, #FF6160 0%, #9E1002 100%);
+				#border: 1px solid #FF2908;
+				border: none;
+				color: #000;
+			}
+		.content{
+			background : linear-gradient(to bottom, #5B5851 0%, #FFFFFF 100%);
+			
+			#padding-top: 20px;
+			#height : auto;
+			#width: 100%;			
+			}
+		.main_div{
+		
+			border-radius : 15px 15px;
+			width: 70%;
+			height: auto;
+			#margin-top: 10px;
+			margin-left:auto;
+			margin-right:auto;
+			border: 10px solid #fff;
+			#position: absolute;
+			
+			}
+			
+		.offer_div{
+			background: linear-gradient( to bottom, #48B5EE 0%, #FFFFFF 100%);
+			border-radius : 15px 15px;
+			height: 150px;
+			}
+		
+		.offer_type{
+				font-size: 30px;
+				font-weight: bold;
+				text-transform:uppercase;				
+				text-align: justify;
+				padding-top: 30px;
+				margin-left: 50px;
+				color: #fff;
+				margin-bottom: 0px;
+			}
+		.sale_font{
+				font-size: 100px;
+				font-weight: bold;
+				text-transform:uppercase;				
+				text-align: justify;
+				margin-left: 50px;
+				margin-top:-35px;
+				color: #9E1002;
+				position: relative;   
+			}
+		.sale_font span{
+			 height: 50%; 
+			position: absolute;
+			color:#FF6160;
+			overflow: hidden;			
+			}
+		.edit_btn_checkout{
+			color: green;
+			font-size:10px;
+			font-weight:bold;
+		}
+		
+		.del_btn_checkout{
+			color: red;
+			font-size:10px;
+			font-weight:bold;
+		}
+		
+		#pay_cancel{
+			margin-left: 38%;
+			margin-bottom: 10px;
+			padding-top: 10px;
+		}
+			
+		#cartTab{
+			text-align: center;
+		}	
+		td.right{
+			text-align: right;
+		}
+		.green_bed{
+			background: linear-gradient(to bottom, #CCDE8C 0%, #2B2B29 100%);
+			height: 50px;
+			width: inherit;
+			margin-top:-35px;
+			}			
+		.sale_font .img1{
+			#top: 260px;
+			#left: 610px;
+			#position: absolute;
+			margin-top: -50px;			
+			margin-right: 40px;			
+			width:60px;
+			height:100px;
+			}			
+		.sale_font .img2{
+			#top: 260px;
+			#left: 710px;
+			#position: absolute;			
+			margin-top: -50px;			
+			margin-right: 40px;			
+			width:60px;
+			height:100px;
+			}	
+		.sale_font .img3{
+			#top: 260px;
+			#left: 810px;
+			#position: absolute;		
+			margin-top: -50px;				
+			margin-right: 40px;			
+			width:60px;
+			height:100px;
+			}
+		.offer_product{
+			background: #2B2B29;
+			height: 50px;
+			width: inherit;
+			#margin-top:-35px;			
+			}
+		.prd_name{
+				color: yellow;
+				display: inline-block;
+				width: 250px;
+				font-weight: bold;
+				font-size : 30px;
+				text-align: justify;
+				padding-left: 5px;
+				}
+		.offer_product .prd_desc{
+				color: #fff;
+				display: inline-block;
+				width: 550px;
+				font-weight: bold;
+				font-size : 10px;
+				text-align: justify;
+				padding-left: 5px;
+				}
+
+							.product_shelves{
+								.margin: 5px;
+								
+								}
+							.product_div{
+								display: inline-block;
+								border:1px #000;
+								margin: 10px;
+								padding:5px;
+								cursor:pointer;
+								}
+							.product_div img{
+								height:100px;
+								width:100px;
+								text-align:center;
+							}
+							.product_name{
+								font-weight:bold;
+								font-size:12px;
+								
+							}
+							
+							.product_price{
+								#margin-left: 10px;
+								color: red;
+								font-weight:bold;
+								font-size:12px;
+								}
+
+.company_div,.category_div,.information_div,.social_network_div,.contact_us_div
+			{		
+				width: 17%;
+				text-align:justify;
+				display:inline-block;
+			}
+			
+			.company_div ul li.header,.category_div ul li.header,.information_div ul li.header,.social_network_div ul li.header,.contact_us_div ul li.header{
+				font-weight:bold;
+				font-size: 12px;
+				margin:10px;
+				padding: 5px;
+				text-align:justify;
+				}
+			
+			.contact_us_div{
+				width: 22%;				
+				}
+			
+			.company_div ul li,.category_div ul li,.information_div ul li,.social_network_div ul li,.contact_us_div ul li
+				{
+					display:block;
+					font-weight: normal;
+					font-size: 10px;
+					text-transform: capitalize;
+					text-align:justify;
+				}
+			
+			.div1{
+				width: 85%;
+				text-align:center;
+				display:inline-block;
+				}
+			.div3,.div2{
+				width: 40%;
+				display:inline-block;
+				}	
+				
+			.secure_shopping{
+				background:linear-gradient(to bottom, #0F0100,#350701);
+				color:#fff;
+				width:100%;
+				height: 150px;
+				padding:10px;
+				margin-top:10px;
+				}
+			.footer1{
+				background: linear-gradient(to bottom,#A81704,#610D02);
+				color: #fff;
+				font-weight: bold;
+				width:100%;
+				height:auto;
+				}
+			.footer_details{
+				width:85%;
+				text-align:center;
+				}
+			.product_content{
+				background: #fff;
+				#display: inline-block;
+				#width:100%;
+				margin-top:90px;
+				text-align:left;
+				}
+			.side_menu_divs{
+				display: inline-block;
+				margin-left: -40px;
+				width:250px;
+				#background:skyblue;
+				border:none;
+				#padding:5px;
+				height:auto;
+				position:absolute;
+				
+				}
+				
+			.side_menu_divs .side_menu{
+				display: block;
+				
+				#padding:5px;
+				height:auto;
+				}
+			.sidemenu ul li{
+				display:block;
+				padding:5px ;
+				background: #FFEEb8;
+				height:auto;
+				text-align: justify;
+				}	
+				
+			.sidemenu ul li.header{
+				background: linear-gradient(to bottom, #FF6160 0%, #9E1002 100%);
+				border-radius: 15px 15px 0 0;
+				text-align: center;
+				font-weight:bold;
+				color:#fff;
+				}
+				
+			.separator{
+				border: 0;
+				height: 1px;
+				background: #fff;
+				#background-image: -webkit-linear-gradient(left, #ccc, #333, #ccc);
+				#background-image: -moz-linear-gradient(left, #ccc, #333, #ccc);
+				#background-image: -ms-linear-gradient(left, #ccc, #333, #ccc);
+				#background-image: -o-linear-gradient(left, #ccc, #333, #ccc);
+				}
+				
+			.sidemenu ul li.footer{
+				#background: linear-gradient(to bottom, #FF6160 0%, #9E1002 100%);
+				border-radius: 0px 0px 10px 10px;
+				
+				}
+				
+				.sidemenu_joinus{
+					#margin-left: -40px;
+					border:none;
+					text-align: center;
+					}
+					
+				.sidemenu_joinus ul li {
+					display:block;
+					padding:5px ;
+					background: #B6B6B6;
+					height:auto;
+					#text-align: justify;
+					}
+				.sidemenu_joinus ul li.header{
+					border-radius: 5px 5px 0 0;
+					}
+					
+				.sidemenu_joinus ul li img{
+					height:40px;
+					width: 40px;
+					#padding: 5px;
+					}
+				
+				.sidemenu_joinus ul li.footer{
+					border-radius: 0px 0px 10px 10px;
+					}
+					
+				.sidemenu_checkout {
+					display:block;
+					margin-left: 40px;
+					border-radius: 10px;
+					border: none;
+					#width: 180px;
+					width:200px;
+					height:130px;
+					}
+				.sidemenu_checkout img{
+					width:100%;
+					height:90%;
+					max-height:100%;
+					max-width:100%;
+					margin:5px;
+					}
+				.newsletter_text{
+					width: 180px;
+					margin: 5px;					
+					}
+				
+				.join_now_btn{
+					background-image: linear-gradient(to bottom, #FF6160 0%, #9E1002 100%);
+					border-radius: 5px;
+					text-align: center;
+					margin-right:auto;
+					margin-left:auto;
+					padding:5px;
+					color:#fff;
+					border:none;
+					}
+			
+			.product_divs{
+				display: inline-block;
+				background:#fff;
+				width: 600px;
+				height:850px;
+				text-align:justify;
+				#padding-left:10px;
+				margin: 15px;
+				position:relative;
+				top: 20px;
+				left: 200px;
+				}
+			.filter_div{
+				display:block;				
+				font-size: 10px;
+				font-weight: bold;
+				}
+				
+			.order_by_div{
+				display:inline-block;
+				
+				}	
+			.items_per_page{
+				display:inline-block;
+				text-align: right;
+				#margin-left : 40px;
+				}
+			.heading1{
+				font-size: 20px;
+				font-weight: bold;
+				text-transform:uppercase;
+				margin: 10px 0 10px 0;
+				}
+
+				#selected_prd_content{
+					display:block;
+					margin:10px;
+					width:97%;
+					}
+				#selected_prd_desc{
+					display:inline-block;
+					margin:5px;
+					width: 250px;
+					}
+				#selected_prd_img{					
+					display:inline-block;
+					width: 200px;
+					margin: 5px;					
+					}
+				#selected_prd_img img{
+					height: 170px;
+					width: 170px;					
+					padding:5px;
+					margin-top:-150px;
+					}
+				table tr td {
+					border:1px solid #ccc;
+					margin:5px;
+					padding: 5px;
+					}
+				table tr th {
+					border:1px solid #ccc;
+					margin:5px;
+					padding: 5px;
+					}
+				#explore_product{
+					padding:10px; 
+					background:#fff;
+					height:400px;
+					width:97%;
+					}
+				.size{
+					border: 1px solid #ccc;
+					height: 40px;
+					width: 40px;
+					#margin: 10px;
+					text-align:left;
+					font-size: 10px;
+					font-weight: bold;
+					}
+				.blue{
+					background: blue;
+					border:1px #ccc;
+					}
+				.yellow{
+					background: yellow;
+					border:1px #ccc;
+					}
+				.green{
+					background: green;
+					border:1px #ccc;
+					}
+				.red{
+					background: red;
+					border:1px #ccc;
+					}
+				.orange{
+					background: orange;
+					border:1px #ccc;
+					
+					}
+				.white{
+					border: 1px solid #ccc;
+					background: white;
+					}
+				.white_border{
+					width:20px;
+					height:20px;
+					margin: 5px;
+					}
+				#stock_prd{
+					margin: 10px;
+					}
+				.avail{
+					color:green;
+					border:none;
+					font-weight: bold;					
+					text-align:center;
+					}
+				.sold{
+					 color: #000;
+					 border: 2px solid red;
+					 background:#FF9905;
+					 font-weight: bold;					
+					text-align:center;
+					}
+				.avail_size{
+					border:none;
+					}
+				#price_per_quantity{
+					text-align:right;
+					}
+				#tot_price{
+					text-align:right;
+					}
+				.selecting_size{
+					background-image:url(img/ok.png);
+					background-repeat: no-repeat;
+					background: #000;
+					color: #fff;
+					#padding-left: 30px;
+					#padding-bottom:30px;
+					#margin-left:20px;
+					}
+				.selecting_color{
+					border: 3px solid #000;					
+					}					
+				#selected_colour_div{
+					text-align:center;
+					}
+				#selected_size_div{
+					text-align:center;
+					}
+				.square{
+					width:20px;
+					height:20px;
+					margin: 5px;
+					}		
+				#cboxLoadedContent{
+					background: #fff;
+					}		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

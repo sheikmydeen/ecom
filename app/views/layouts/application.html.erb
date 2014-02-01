@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Myecom</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "jquery.colorbox-min"%>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<!--[if lt IE 8]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <!-- Add your site or application content here -->
+        <div class="outer_layer" >
+			<div class="top_layer">
+				<div class="outer_box"><div id='sign_up' href='#login_pop'>Account Sign-in / Register </div></div> 
+				<div class="outer_box">Buyer's Guide</div> 
+				<div class="outer_box">About</div> 
+				<div class="outer_box">Blog</div> 
+				<div class="outer_box">Contact</div> 
+				<div class="outer_box1" style="margin:1px 5px;"><%= image_tag "phone_1.png" %><phone>+91-9095739367</phone></div> 
+				<div class="outer_box1" ><%= image_tag "chat1.png" %>Live Help</div>
+				<div class="outer_box1" ><%= image_tag "flag_india.png" %><%= image_tag "flag_usa.png" %></div>
+			</div>
+	        <!-- cart_layer starts here-->
+			<div class="cart_layer">
+				<div class="cart">
+					<div class="items_count">
+						<div id="zero_count"><%= image_tag "shopping_basket.png" %>No Items in your Cart</div>
+						<div id="more_count" style="display:none;"><%= image_tag "Full-shopping-cart.png"%><span id="count"></span> Items in your Cart</div>
+						<button class="check_btn" style="margin: 2px;" id="shop_check_out">Show Cart</button>
+					</div>
+				</div>
+				<div class="ws_head">Ecommerce Website</div>
+				<div class="search_layer"><div><input type="text" name="search_fields" id="search_fields" class="search_box" value="Search Website"/><button class='go_btn'>Go</button></div></div>
+			</div>
+			<!-- cart layer ends here -->
+			<!-- menu div starts here -->
+		
+			<div class='menu' align='center'>
+				<ul id="menu">    
+				<li >
+					<a href='#'>Home</a>
+				</li>
+				<!--<li><a href="#" class="drop">Home</a><!-- Begin Home Item -->    
+				   <!-- <div class="dropdown_2columns"><!-- Begin 2 columns container -->    
+					   <!-- <div class="col_2">
+							<h2>Welcome !</h2>
+						</div>    
+						<div class="col_2">
+							<p>Hi and welcome here ! This is a showcase of the possibilities of this awesome Mega Drop Down Menu.</p>             
+							<p>This item comes with a large range of prepared typographic stylings such as headings, lists, etc.</p>             
+						</div>    
+						<div class="col_2">
+							<h2>Cross Browser Support</h2>
+						</div>            
+						<div class="col_1">
+							<img src="img/browsers.png" width="125" height="48" alt="" />
+						</div>
+						
+						<div class="col_1">
+							<p>This mega menu has been tested in all major browsers.</p>
+						</div>
+					  
+					</div><!-- End 2 columns container -->
+				
+				<!--</li><!-- End Home Item -->
+
+				<li><a href="#" class="drop">Latest Arrivals</a><!-- Begin 5 columns Item -->
+				
+					<div class="dropdown_5columns"><!-- Begin 5 columns container -->
+					
+						<div class="col_5">
+							<h2>This is an example of a large container with 5 columns</h2>
+						</div>
+						
+						<div class="col_1">
+							<p class="black_box">This is a dark grey box text. Fusce in metus at enim porta lacinia vitae a arcu. Sed sed lacus nulla mollis porta quis.</p>
+						</div>
+						
+						<div class="col_1">
+							<p>Phasellus vitae sapien ac leo mollis porta quis sit amet nisi. Mauris hendrerit, metus cursus accumsan tincidunt.</p>
+						</div>
+						
+						<div class="col_1">
+							<p class="italic">This is a sample of an italic text. Consequat scelerisque. Fusce sed lectus at arcu mollis accumsan at nec nisi porta quis sit amet.</p>
+						</div>
+						
+						<div class="col_1">
+							<p>Curabitur euismod gravida ante nec commodo. Nunc dolor nulla, semper in ultricies vitae, vulputate porttitor neque.</p>
+						</div>
+						
+						<div class="col_1">
+							<p class="strong">This is a sample of a bold text. Aliquam sodales nisi nec felis hendrerit ac eleifend lectus feugiat scelerisque.</p>
+						</div>
+					
+						<div class="col_5">
+							<h2>Here is some content with side images</h2>
+						</div>
+					   
+						<div class="col_3">
+						
+							<img src="01.jpg" width="70" height="70" class="img_left imgshadow" alt="" />
+							<p>Maecenas eget eros lorem, nec pellentesque lacus. Aenean dui orci, rhoncus sit amet tristique eu, tristique sed odio. Praesent ut interdum elit. Sed in sem mauris. Aenean a commodo mi. Praesent augue lacus.<a href="#">Read more...</a></p>
+					
+							<img src="img/02.jpg" width="70" height="70" class="img_left imgshadow" alt="" />
+							<p>Aliquam elementum felis quis felis consequat scelerisque. Fusce sed lectus at arcu mollis accumsan at nec nisi. Aliquam pretium mollis fringilla. Nunc in leo urna, eget varius metus. Aliquam sodales nisi.<a href="#">Read more...</a></p>
+						
+						</div>
+						
+						<div class="col_2">
+						
+							<p class="black_box">This is a black box, you can use it to highligh some content. Sed sed lacus nulla, et lacinia risus. Phasellus vitae sapien ac leo mollis porta quis sit amet nisi. Mauris hendrerit, metus cursus accumsan tincidunt.Quisque vestibulum nisi non nunc blandit placerat. Mauris facilisis, risus ut lobortis posuere, diam lacus congue lorem, ut condimentum ligula est vel orci. Donec interdum lacus at velit varius gravida. Nulla ipsum risus.</p>
+						
+						</div>
+					
+					</div><!-- End 5 columns container -->
+				
+				</li><!-- End 5 columns Item -->
+
+				<li><a href="#" class="drop">Men's</a><!-- Begin 4 columns Item -->
+				
+					<div class="dropdown_4columns"><!-- Begin 4 columns container -->
+					
+						<div class="col_4">
+							<h2>This is a heading title</h2>
+						</div>
+						
+						<div class="col_1">
+						
+							<h3>Some Links</h3>
+							<ul>
+								<li><a href="#">ThemeForest</a></li>
+								<li><a href="#">GraphicRiver</a></li>
+								<li><a href="#">ActiveDen</a></li>
+								<li><a href="#">VideoHive</a></li>
+								<li><a href="#">3DOcean</a></li>
+							</ul>   
+							 
+						</div>
+				
+						<div class="col_1">
+						
+							<h3>Useful Links</h3>
+							<ul>
+								<li><a href="#">NetTuts</a></li>
+								<li><a href="#">VectorTuts</a></li>
+								<li><a href="#">PsdTuts</a></li>
+								<li><a href="#">PhotoTuts</a></li>
+								<li><a href="#">ActiveTuts</a></li>
+							</ul>   
+							 
+						</div>
+				
+						<div class="col_1">
+						
+							<h3>Other Stuff</h3>
+							<ul>
+								<li><a href="#">FreelanceSwitch</a></li>
+								<li><a href="#">Creattica</a></li>
+								<li><a href="#">WorkAwesome</a></li>
+								<li><a href="#">Mac Apps</a></li>
+								<li><a href="#">Web Apps</a></li>
+							</ul>   
+							 
+						</div>
+				
+						<div class="col_1">
+						
+							<h3>Misc</h3>
+							<ul>
+								<li><a href="#">Design</a></li>
+								<li><a href="#">Logo</a></li>
+								<li><a href="#">Flash</a></li>
+								<li><a href="#">Illustration</a></li>
+								<li><a href="#">More...</a></li>
+							</ul>   
+							 
+						</div>
+						
+					</div><!-- End 4 columns container -->
+				</li>
+					<li><a href="#" class="drop">Women's</a><!-- Begin 4 columns Item -->
+				
+					<div class="dropdown_4columns"><!-- Begin 4 columns container -->
+					
+						<div class="col_4">
+							<h2>This is a heading title</h2>
+						</div>
+						
+						<div class="col_1">
+						
+							<h3>Some Links</h3>
+							<ul>
+								<li><a href="#">ThemeForest</a></li>
+								<li><a href="#">GraphicRiver</a></li>
+								<li><a href="#">ActiveDen</a></li>
+								<li><a href="#">VideoHive</a></li>
+								<li><a href="#">3DOcean</a></li>
+							</ul>   
+							 
+						</div>
+				
+						<div class="col_1">
+						
+							<h3>Useful Links</h3>
+							<ul>
+								<li><a href="#">NetTuts</a></li>
+								<li><a href="#">VectorTuts</a></li>
+								<li><a href="#">PsdTuts</a></li>
+								<li><a href="#">PhotoTuts</a></li>
+								<li><a href="#">ActiveTuts</a></li>
+							</ul>   
+							 
+						</div>
+				
+						<div class="col_1">
+						
+							<h3>Other Stuff</h3>
+							<ul>
+								<li><a href="#">FreelanceSwitch</a></li>
+								<li><a href="#">Creattica</a></li>
+								<li><a href="#">WorkAwesome</a></li>
+								<li><a href="#">Mac Apps</a></li>
+								<li><a href="#">Web Apps</a></li>
+							</ul>   
+							 
+						</div>
+				
+						<div class="col_1">
+						
+							<h3>Misc</h3>
+							<ul>
+								<li><a href="#">Design</a></li>
+								<li><a href="#">Logo</a></li>
+								<li><a href="#">Flash</a></li>
+								<li><a href="#">Illustration</a></li>
+								<li><a href="#">More...</a></li>
+							</ul>   
+							 
+						</div>
+						
+					</div><!-- End 4 columns container -->
+
+				</li><!-- End 4 columns Item -->
+					<li><a href="#" class="drop">Kids</a><!-- Begin 4 columns Item -->
+				
+					<div class="dropdown_4columns"><!-- Begin 4 columns container -->
+					
+						<div class="col_4">
+							<h2>This is a heading title</h2>
+						</div>
+						
+						<div class="col_1">
+						
+							<h3>Some Links</h3>
+							<ul>
+								<li><a href="#">ThemeForest</a></li>
+								<li><a href="#">GraphicRiver</a></li>
+								<li><a href="#">ActiveDen</a></li>
+								<li><a href="#">VideoHive</a></li>
+								<li><a href="#">3DOcean</a></li>
+							</ul>   
+							 
+						</div>
+				
+						<div class="col_1">
+						
+							<h3>Useful Links</h3>
+							<ul>
+								<li><a href="#">NetTuts</a></li>
+								<li><a href="#">VectorTuts</a></li>
+								<li><a href="#">PsdTuts</a></li>
+								<li><a href="#">PhotoTuts</a></li>
+								<li><a href="#">ActiveTuts</a></li>
+							</ul>   
+							 
+						</div>
+				
+						<div class="col_1">
+						
+							<h3>Other Stuff</h3>
+							<ul>
+								<li><a href="#">FreelanceSwitch</a></li>
+								<li><a href="#">Creattica</a></li>
+								<li><a href="#">WorkAwesome</a></li>
+								<li><a href="#">Mac Apps</a></li>
+								<li><a href="#">Web Apps</a></li>
+							</ul>   
+							 
+						</div>
+				
+						<div class="col_1">
+						
+							<h3>Misc</h3>
+							<ul>
+								<li><a href="#">Design</a></li>
+								<li><a href="#">Logo</a></li>
+								<li><a href="#">Flash</a></li>
+								<li><a href="#">Illustration</a></li>
+								<li><a href="#">More...</a></li>
+							</ul>   
+							 
+						</div>
+						
+					</div><!-- End 4 columns container -->
+				</li>
+				<li class="menu_right"><a href="#"> Feedback</a></li>
+				<li class="menu_right"><a href="#" class="drop">Gift cards</a>
+				
+					<div class="dropdown_1column align_right">
+					
+							<div class="col_1">
+							
+								<ul class="simple">
+									<li><a href="#">FreelanceSwitch</a></li>
+									<li><a href="#">Creattica</a></li>
+									<li><a href="#">WorkAwesome</a></li>
+									<li><a href="#">Mac Apps</a></li>
+									<li><a href="#">Web Apps</a></li>
+									<li><a href="#">NetTuts</a></li>
+									<li><a href="#">VectorTuts</a></li>
+									<li><a href="#">PsdTuts</a></li>
+									<li><a href="#">PhotoTuts</a></li>
+									<li><a href="#">ActiveTuts</a></li>
+									<li><a href="#">Design</a></li>
+									<li><a href="#">Logo</a></li>
+									<li><a href="#">Flash</a></li>
+									<li><a href="#">Illustration</a></li>
+									<li><a href="#">More...</a></li>
+								</ul>   
+								 
+							</div>
+							
+					</div>
+					
+				</li>
+
+				<li class="menu_right"><a href="#" class="drop">Brands</a><!-- Begin 3 columns Item -->
+				
+					<div class="dropdown_3columns align_right"><!-- Begin 3 columns container -->
+						
+						<div class="col_3">
+							<h2>Lists in Boxes</h2>
+						</div>
+						
+						<div class="col_1">
+				
+							<ul class="greybox">
+								<li><a href="#">FreelanceSwitch</a></li>
+								<li><a href="#">Creattica</a></li>
+								<li><a href="#">WorkAwesome</a></li>
+								<li><a href="#">Mac Apps</a></li>
+								<li><a href="#">Web Apps</a></li>
+							</ul>   
+				
+						</div>
+						
+						<div class="col_1">
+				
+							<ul class="greybox">
+								<li><a href="#">ThemeForest</a></li>
+								<li><a href="#">GraphicRiver</a></li>
+								<li><a href="#">ActiveDen</a></li>
+								<li><a href="#">VideoHive</a></li>
+								<li><a href="#">3DOcean</a></li>
+							</ul>   
+				
+						</div>
+						
+						<div class="col_1">
+				
+							<ul class="greybox">
+								<li><a href="#">Design</a></li>
+								<li><a href="#">Logo</a></li>
+								<li><a href="#">Flash</a></li>
+								<li><a href="#">Illustration</a></li>
+								<li><a href="#">More...</a></li>
+							</ul>   
+				
+						</div>
+						
+						<div class="col_3">
+							<h2>Here are some image examples</h2>
+						</div>
+						
+						<div class="col_3">
+							<img src="img/02.jpg" width="70" height="70" class="img_left imgshadow" alt="" />
+							<p>Maecenas eget eros lorem, nec pellentesque lacus. Aenean dui orci, rhoncus sit amet tristique eu, tristique sed odio. Praesent ut interdum elit. Maecenas imperdiet, nibh vitae rutrum vulputate, lorem sem condimentum.<a href="#">Read more...</a></p>
+				
+							<img src="img/01.jpg" width="70" height="70" class="img_left imgshadow" alt="" />
+							<p>Aliquam elementum felis quis felis consequat scelerisque. Fusce sed lectus at arcu mollis accumsan at nec nisi. Aliquam pretium mollis fringilla. Vestibulum tempor facilisis malesuada. <a href="#">Read more...</a></p>
+						</div>
+					
+					</div><!-- End 3 columns container -->
+					
+				</li><!-- End 3 columns Item -->
+			</ul>
+				<!--<ul>
+					<li class='active'>
+						Home
+					</li>
+					<li>
+						Latest Arrivals
+						<!--<div class="wep_popup">
+							<ul class='submenu'>
+								<li class='heading'>Electronics and Consumer Goods</li>
+								<li class= "listing">Mobile phones</li>
+								<li class= "listing">Ebook Readers</li>
+								<li class= "listing">Laptops</li>
+								<li class= "listing">Cameras</li>
+								<li class= "listing">Televisions</li>
+								<li class= "listing">Listing</li>
+							</ul>
+						</div> 
+					</li>
+					<li>
+						Men's
+						<!--<div class="wep_popup">
+							<ul class='submenu'>
+								<li class='heading'>Clothes</li>
+								<li class= "listing">T-shirt</li>
+								<li class= "listing">Jeans</li>
+								<li class= "listing">Shirts</li>
+								<li class= "listing">Pants</li>
+								<li class= "listing">Sports and Active Wears</li>
+								<li class= "listing">Footwear</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						Women's
+					</li>
+					<li>
+						Kids
+					</li>
+					<li>
+						Brands
+					</li>
+					<li>
+						Sale
+					</li>
+					<li>
+						Gift Cards
+					</li>
+					<li>
+						Freebies
+					</li>
+					<li>
+						Feedback
+					</li>
+				</ul>-->
+			</div>
+						
+        </div>
+        
+        <!-- outer_layer Ends here -->
+        <div class="content">
+			<div class="shopping_cart">				
+				No items in the shopping cart...
+			</div>
+			<div class="main_div" align="center">
+				<!-- offer_div starts here -->
+				<div class="offer_div">
+					<div class="offer_type">Festival offer</div>
+					<div class="sale_font"><span>SAle</span>SAle<span id='advt_img' style="margin:20px;">
+							
+							<%= image_tag("t-shirt.png", class: "img1")%>
+							<%= image_tag("t-shirt.png", class: "img2")%>
+							<%= image_tag("t-shirt.png", class: "img3")%>
+						</span></div>
+					<div class="green_bed">
+						
+						
+					</div>
+					<div class="offer_product">
+						<div class="prd_name">Product Name</div>
+						<div class="prd_desc">This is the product got a discount of 20 %. Only 2500 rupees only.</div>
+					</div>
+				</div>
+				<!-- offer_div ends here -->
+				<div class="product_content">
+					<div class="side_menu_divs">
+						<div class="sidemenu">
+							<ul>
+								<li class="header">
+									Browse Categories
+									
+								</li>
+								<li>
+									Fashion Apparles
+									<div class="separator"></div>
+								</li>
+								<li>
+									Classical Goods
+									<div class="separator"></div>
+								</li>
+								<li>
+									Garden Goods
+									<div class="separator"></div>
+								</li>
+								<li class="footer"> 
+									Clothes
+								</li>
+							</ul>
+						</div>
+						<div class="sidemenu_joinus">
+							<ul>
+								<li class="header">
+									<div class="newsletter">
+										Join our newsletter list to get the latest updates
+										<input type="text" class="newsletter_text" id="email_subscription" name="email_subscription"/>
+										<button class="join_now_btn">Join Now</button>
+									</div>
+								</li>
+								<div class="separator"></div>
+								<li>
+									<%= image_tag "social_twitter.png" %> Follow us on Twitter
+								</li>
+								<div class="separator"></div>
+								<li>
+									<%= image_tag "social_facebook.png" %> Become our fan on Facebook
+								</li>
+								<div class="separator"></div>
+								<li>
+									<%= image_tag "social_linked_in.png" %> Connect with us on LinkedIn
+								</li>
+								<div class="separator"></div>
+								<li class="footer">
+									<%= image_tag "gmail.png"%> Send us your Email enqueries
+								</li>
+							</ul>
+						</div>
+						<div class="sidemenu_checkout">
+							<img id="paypal" />
+							<img id="checkout" />
+						</div>
+					</div>
+					<div class="product_divs">						
+						<div class="filter_div">
+							Sort by: <select name="order_by">
+										<option value="asc"> Low price to High </option>
+										<option value="desc">High price to Low </option>
+										<option value="desc">Popularity </option>										
+									</select>
+							<!--Brand : <select name="brandName">
+									<option value="maruti"> Maruti Suzuki </option>
+									<option value="hyundai">Hyundai </option>
+								</select>
+							Product : <select name="productName">
+									<option value="swift">Swift </option>
+									<option value="ritz"> Ritz</option>
+								</select>-->
+							<div class="items_per_page" align='right' style="margin-left:250px;"> 
+								Items per page 
+									<select name="items_per_page" id="items_per_page">
+										<option value="20">20</option>
+										<option value="40">40</option>
+										<option value="60">60</option>
+										<option value="80">80</option>
+										<option value="100">100</option>
+									</select>
+							</div>
+						
+						</div>
+						<!-- End of filter_div --> 
+						<div class="heading1">
+							Our Products
+						</div>
+						<style>
+						</style>
+						<div class="product_shelves">
+							<div class="product_div">
+								<%= image_tag "t-shirt.png" %>
+								<div class="product_name">Product Name</div>
+								<span style="font-weight:bold;font-size:12px;">Price</span><span class="WebRupee" style="color:red;margin-left:5px;font-weight:bold;font-size:12px;">Rs.</span></style> <span class="product_price">55</span>
+							</div><div class="product_div">
+								<%= image_tag "t-shirt.png" %>
+								<div class="product_name">Product Name</div>
+								<span style="font-weight:bold;font-size:12px;">Price</span><span class="WebRupee" style="color:red;margin-left:5px;font-weight:bold;font-size:12px;">Rs.</span></style> <span class="product_price">55</span>
+							</div><div class="product_div">
+								<%= image_tag "t-shirt.png" %>
+								<div class="product_name">Product Name</div>
+								<span style="font-weight:bold;font-size:12px;">Price</span><span class="WebRupee" style="color:red;margin-left:5px;font-weight:bold;font-size:12px;">Rs.</span></style> <span class="product_price">55</span>
+							</div><div class="product_div">
+								<%= image_tag "t-shirt.png" %>
+								<div class="product_name">Product Name</div>
+								<span style="font-weight:bold;font-size:12px;">Price</span><span class="WebRupee" style="color:red;margin-left:5px;font-weight:bold;font-size:12px;">Rs.</span></style> <span class="product_price">55</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- main_div ends here -->
+			</div>
+			<!-- content ends here -->
+			<div class="secure_shopping">
+				<div class="div1">
+					<div class="div2">Shop online with us safely & securely</div>
+					<div class="div3">We ship your orders anywhere.</div>
+				</div>
+			</div>
+			<div class="footer1">
+				<div class="footer_details">
+					<div class="company_div">
+						<ul>
+							<li class="header">company</li>
+							<li>home</li>
+							<li>about us</li>
+							<li>blog</li>
+							<li>latest news</li>
+							<li>login</li>
+							<li>join us</li>							
+						</ul>
+					</div>
+					<div class="category_div">
+						<ul>
+							<li class="header">catagories</li>
+							<li>mens</li>
+							<li>womens</li>
+							<li>kids</li>
+							<li>latest arrivals</li>
+							<li>freebies</li>
+							<li>fashion</li>							
+						</ul>
+					</div><div  class="information_div">
+						<ul>
+							<li class="header">information</li>
+							<li>my account</li>
+							<li>rewards</li>
+							<li>terms</li>
+							<li>condition</li>
+							<li>buying guide</li>
+							<li>FAQ</li>							
+						</ul>
+					</div><div class="social_network_div">
+						<ul>
+							<li class="header">social_network</li></li>
+							<li>my account</li>
+							<li>rewards</li>
+							<li>terms</li>
+							<li>condition</li>
+							<li>buying guide</li>
+							<li>FAQ</li>							
+						</ul>
+					</div><div class="contact_us_div">
+						<ul>
+							<li class="header">contact_us</li>
+							<li>phone no:9095739367</li>
+							<li>tol:125656565</li>
+							<li>email:send us an <span style="font-weight:bold;font-size:12px;"><a href="#">Email</a></span></li>
+							<li>Mon- Sat 9am-7.30pm</li>
+							<li>sundays & holidays closed</li>
+							<li>Powered By <span style="font-weight:bold;font-size:12px;color:yellow;">JasmineSoft</span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+<!--        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="js/jquery.colorbox-min.js"></script> -->
+		<script>
+			var items_per_page=0;
+			items_per_page = parseInt($("#items_per_page").val());
+			var items_per_row=4;
+			var selected_product;
+			var ipa;
+			var productHash=[];
+			var tot_prd;
+			for(var i=0;i<5;i++){
+				product={};	
+				product["id"]=i;
+				product["prd_name"]= "T-Shirt";
+				product["price"]= 55+i;
+				product["popularity"]= "";
+				product["prd_category"]="";
+				product["prd_discount"]="";
+				product["img"]="t-shirt.png"
+				productHash[i]=product;	
+			}
+
+			$(function(){
+				//localStorage.removeItem("purchase");
+				showAllProducts(items_per_page,productHash,items_per_row);
+				$("#register_popup").hide();
+				$.getJSON("http://smart-ip.net/geoip-json?callback=?", function(data){
+				   ipa=data.host;
+				});				
+				now = $.now();				
+				if(typeof localStorage["purchase"] != "undefined" ){
+					var purchaseObj= JSON.parse(localStorage["purchase"]);
+					tot_prd=purchaseObj.all_products;
+					if(tot_prd.length > 0){
+						$("#zero_count").hide();
+						$("#more_count").show();
+						$("#count").text(tot_prd.length);
+					}else{
+						$("#zero_count").show();
+						$("#more_count").hide();
+						$("#count").text(tot_prd.length);
+						}
+					str = "<div id='pay_cancel'><button class='go_btn' id='pay_btn'>Checkout</button><button id='cancel_btn'>Cancel</button></div><table align='center' id='cartTab'><tr><th>S.No</th><th>Name</th><th>Price/Qty in (<span class='WebRupee' style='margin-left:5px;font-weight:bold;font-size:15px;'>Rs.</span>)</th><th>Qty</th><th>Price</th><th>Action</th></tr>";
+					counter=1;
+					for(var ind=0;ind<tot_prd.length;ind++){
+						prd = tot_prd[ind];
+						str += "<tr><td>"+counter+"</td>";
+						str += "<td>"+prd.prd_name+"</td>";
+						str += "<td class='right'><div class='prd_price_div'>"+prd.prd_price+"</div></td>";
+						str += "<td class='right'><input type='text' class='qty_ord' maxlength='3' size='3' id= 'qty_ord"+counter+"' value='"+prd.quantity_ordered+"' readonly/></td>";
+						str += "<td class='right'><div class='net_total_price_div'>"+prd.net_total_price+"</div></td>";
+						str += "<td><button class='edit_btn_checkout' href='"+counter+"'>Edit</button><button class='del_btn_checkout' href='"+counter+"'>Delete</button></td>";
+						str += "</tr>"
+						//console.log(key + ' = ' + value);
+						counter++;
+
+
+					}
+					str += "<tr><td  colspan='3'>Total</td><td class='right'><div id='tot_qty_purc'>"+purchaseObj.total_quantity_purchased+"</div></td>";
+					str +=  "<td class='right'><div id='tot_net_purc_amt'>"+purchaseObj.total_net_purchase_amount+"</div></td></tr>";
+					str += "</table>";
+					$(".shopping_cart").html(str);
+				}
+				
+				$("#wep_popup").mouseleave(function(){
+					//$(this).hide();
+					});
+				$("#wep_popup").mouseenter(function(){
+					//$(this).show();
+				});
+				
+				$(".qty_ord").blur(function(){
+					$(this).attr('readonly','readonly');
+					obj = $(this).closest('tr');
+					/*var attr = $(this).attr('readonly');
+					if (typeof attr == 'readonly' && attr !== false) {
+						alert("attr is updated");
+						}
+					else{
+						alert("real problem here....");
+						}*/	
+					tot_price= parseInt($(this).val())*parseFloat(obj.find('td .prd_price_div').text());
+					obj.find('td .net_total_price_div').text(tot_price);
+					row=this.id.split("qty_ord")[1];
+					product_upd= tot_prd[row-1];
+					product_upd.quantity_ordered= parseInt($(this).val());
+					product_upd.net_total_price = tot_price;
+					recalcTotal(tot_prd);
+					
+					purc = JSON.parse(localStorage["purchase"]);
+					//alert(purc.total_quantity_purchased);
+					$("#tot_qty_purc").text(purc.total_quantity_purchased);
+					$("#tot_net_purc_amt").text(purc.total_net_purchase_amount);
+					//window.location.href=window.location.href;
+					//alert($(this).closest('tr').find('td .net_total_price_div').text());
+					//alert($(this).val());
+					});
+				
+				$(".edit_btn_checkout").click(function(){
+					//alert('i love jasmine jainambi');
+					ele_id = $(this).closest("tr").find('td .qty_ord').attr('id');
+					ele = document.getElementById(ele_id);
+					$(ele).removeAttr("readonly");
+					$(ele).focus();
+					$(ele).select();
+					//alert(ele.value);
+				});
+				
+				$(".del_btn_checkout").click(function(){
+					//alert('i love jasmine jainambi');
+					//alert($(this).attr("href"));
+					//product_del= tot_prd[$(this).attr("href")-1];					
+					tot_prd.splice(parseInt($(this).attr("href"))-1, 1);
+					recalcTotal(tot_prd);
+					$(this).closest("tr").remove();
+					window.location.href = window.location.href;					
+					});
+				
+				$("#cancel_btn").click(function(){
+					//alert('hi');
+					localStorage.removeItem("purchase");
+					window.location.href=window.location.href;
+					});
+				
+				$("#items_per_page").change(function(){
+					items_per_page = parseInt($("#items_per_page").val());
+					showAllProducts(items_per_page,productHash,items_per_row);
+					});
+				$("#add_to_cart").click(function(){
+					if($("#selected_size_div").text() == ""){
+						alert("Size should be selected");
+						return false;
+					}
+					if(!$("#selected_colour_div").hasClass("square")){
+						alert("Color should be selected");
+						return false;
+						}
+					
+					
+					
+					if($("#tab tr").length>1){
+						if(Modernizr.localstorage){
+							var product= {};
+							var allProducts=[];
+							var purchase;
+							classArray = $('#selected_colour_div').attr('class').split(" ");
+							product.id = selected_prd["id"];
+							product.prd_id = selected_prd["id"];
+							product.prd_name = selected_prd["prd_name"];
+							product.prd_category = selected_prd["prd_category"];
+							product.prd_price = selected_prd["price"];
+							product.prd_discount_sale = selected_prd["discount_sale"];
+							product.prd_discount = selected_prd["prd_discount"];
+							product.prd_discount_in_price = (selected_prd["prd_discount"] * parseFloat($("#tot_price1").text()))/100;
+							product.quantity_ordered = $('#qty').val();
+							product.gross_total_price = parseFloat($("#tot_price1").text());
+							product.net_total_price = parseFloat($("#tot_price1").text()) - product.prd_discount_in_price;
+							product.ordered_time = now;
+							product.color = classArray[1].trim();
+							product.size = $('#selected_size_div').text();
+							
+							if(typeof localStorage["purchase"] != "undefined" ){
+								purchase = JSON.parse(localStorage["purchase"]);
+								allProducts = purchase.all_products
+								allProducts.push(product);
+								purchase.all_products = allProducts
+								purchase.ipa = ipa;
+								//purchase.purchased_time = "";
+								//purchase.purchased_via = "";
+								purchase.total_quantity_purchased +=  parseInt(product.quantity_ordered);
+								purchase.total_discount_amount  +=  product.prd_discount_in_price;
+								purchase.total_net_purchase_amount +=product.net_total_price ;
+								purchase.total_gross_purchase_amount +=product.gross_total_price;
+								localStorage["purchase"] = JSON.stringify(purchase);
+								console.log(localStorage["purchase"],"Purchase Updated....")
+								alert("cart updated");
+								window.location.href=window.location.href;
+								}else{
+								purchase = {};
+								allProducts.push(product);
+								purchase.all_products = allProducts
+								purchase.ipa = ipa;
+								//purchase.purchased_time = "";
+								//purchase.purchased_via = "";s
+								purchase.total_quantity_purchased =  parseInt(product.quantity_ordered);
+								purchase.total_discount_amount  =  product.prd_discount_in_price;
+								purchase.total_net_purchase_amount =product.net_total_price ;
+								purchase.total_gross_purchase_amount =product.gross_total_price;
+								localStorage.setItem("purchase",JSON.stringify(purchase));
+								alert("cart created ");
+								console.log(localStorage["purchase"],"Purchase added....")
+								window.location.href=window.location.href;								
+								}
+							}
+						else{						
+							alert("Support for localstorage is not found in your browser");
+						}
+					}else{
+						alert("Atleast one purchase is necessary to add to cart.")
+					}
+				});
+					
+				$(".size").click(function(){					
+					if($(this).hasClass("selecting_size")){
+						//$(this).toggleClass("selecting_size");
+						$(this).removeClass("selecting_size");
+						$(".size").removeClass("selecting_size");
+						$("#selected_size_div").text("");
+						}else{
+							$(".size").removeClass("selecting_size");
+							$("#selected_size_div").removeClass("selecting_size");
+							$(this).addClass("selecting_size");
+							if(this.id=='s_btn'){
+								$("#selected_size_div").text("S");
+								//$("#selected_size_div").addClass("size");
+							}
+							else if(this.id=='m_btn'){
+								$("#selected_size_div").text("M");
+								//$("#selected_size_div").addClass("size");								
+								}
+							else if(this.id=='l_btn'){
+								$("#selected_size_div").text("L");
+								//$("#selected_size_div").addClass("size");
+								}
+							else if(this.id=='xl_btn'){
+								$("#selected_size_div").text("XL");
+								//$("#selected_size_div").addClass("size");																
+								}
+							else if(this.id=='xxl_btn'){
+								$("#selected_size_div").text("XXL");
+								//$("#selected_size_div").addClass("size");																
+								}
+						}
+					});
+					
+					$("#add_row").click(function(){
+						var currRow = $('#tab tr').length;					
+						var s = "<tr style='margin-top:5px;'><td class='sno'>"+currRow+"</td>";
+						s += "<td><input type='text' class='qty' maxlength='3' id='qty"+currRow+"' name='qty"+currRow+"' size='3' value='1'/></td>";
+						s +=  "<td><div id='price_per_quantity"+currRow+"' class='price_per_quantity'></div></td>";
+						s +=  "<td><div id='tot_price"+currRow+"' class='tot_price'></div></td>";
+						s +=  "<td><div id='selected_size_div"+currRow+"'></div></td>";
+						s +=  "<td><div id='selected_colour_div"+currRow+"' align='center'></div></td>";
+						//s += "<td><div id='delete_div' align='center'><input type='checkbox' name='check' id='check"+currRow+"' value='"+currRow+"'/></div></td>";
+						s += "</tr>";
+						$("#tab").find("tbody").append(s);
+						//Updating the price 
+						$(".price_per_quantity").text(selected_prd["price"]);
+						$(".tot_price").text(parseInt($(".qty").val())*(parseFloat(selected_prd["price"])));
+						//$("input:text").addClass('qty');
+					});
+						
+						
+					$("#del_row").click(function(){
+						deleteRow("tab");
+						rowArrange("tab");
+					});
+					
+					$(".square").click(function(){
+						if($(this).hasClass("selecting_color")){
+						//$(this).toggleClass("selecting_size");
+							$(this).removeClass("selecting_color");
+							$(".square").removeClass("selecting_color");
+							$("#selected_colour_div").removeClass();
+						}else{
+							$(".square").removeClass("selecting_color");
+							$("#selected_colour_div").removeClass();
+							$(this).addClass("selecting_color");
+							if(this.id=='blue_btn'){
+								$("#selected_colour_div").addClass("square blue");
+							}
+							else if(this.id=='white_btn'){
+								$("#selected_colour_div").addClass("square white");								
+								}
+							else if(this.id=='orange_btn'){
+								$("#selected_colour_div").addClass("square orange");
+								}
+							else if(this.id=='red_btn'){
+								$("#selected_colour_div").addClass("square red");
+								}
+							else if(this.id=='green_btn'){
+								$("#selected_colour_div").addClass("square green");
+								}
+							else if(this.id=='yellow_btn'){
+								$("#selected_colour_div").addClass("square yellow");
+							}
+						}
+					});
+					
+				$(".product_div").click(function(){
+					selected_product=this.id;
+					selected_prd=productHash[selected_product];
+					$("#products_heading").text(selected_prd["prd_name"]);
+					$("#selected_prd_img img")[0].src= selected_prd["img"];
+					$("#price_per_quantity1").text(selected_prd["price"]);
+					$("#tot_price1").text(parseInt($("#qty").val())*(parseFloat(selected_prd["price"])));
+					$(this).colorbox({inline:true, width:"50%",transition:"fade"});
+				});
+				
+				
+				
+				$("#sign_up").click(function(){
+					$(this).colorbox({inline:true, width:"60%",transition:"fade"});
+					});
+				
+				$("#qty").blur(function(){
+					$("#tot_price1").text(parseInt($("#qty").val())*(parseFloat(selected_prd["price"])));
+				});
+				
+				$(".menu ul li").hover(function(){
+					$(".submenu").hide();
+					$(this).find(".submenu").show();
+				});
+				
+				$("#register_email").click(function(){
+					//alert('hi');
+					//$.colorbox.close();
+					$("#enclose").hide();
+					$("#register_popup").show();
+					//$("#login_pop").hide();
+					//$(this).find('#login_pop').colorbox();
+					//$(this).colorbox({height: "100%", width:"50%",transition:"fade"});
+					});
+					
+				var preloads = [
+					'paypal.jpg',
+					'googlecheckout.png'];
+					//$("#paypal")[0].src = preloads[0];
+					//$("#checkout")[0].src = preloads[1];
+					$("#paypal").html('<%=image_tag 'paypal.jpg'%>')
+					$("#checkout").html('<%=image_tag 'googlecheckout.png'%>')
+				
+				$("#shop_check_out").click(function(){
+					$(".shopping_cart").toggle();
+					if($(".shopping_cart").is(':visible')){
+						$("#shop_check_out").html("Hide Cart");
+						}else{
+							$("#shop_check_out").html("Show Cart");
+							}
+				});
+				/*var paypalHeight = $('#paypal img').height();
+				if (paypalHeight < 400) {
+					var margintop = (paypalHeight-400) / 2;
+					$('.sidemenu_checkout').css('margin-top', margintop);
+					
+				}*/
+				
+				
+			});
+			
+			function recalcTotal(tot_prd){
+				if(typeof localStorage["purchase"] != "undefined"){
+						purchaseObj = JSON.parse(localStorage["purchase"]);
+						purchaseObj.all_products = tot_prd;							
+						qty_ordered=0;
+						disc_price=0;
+						net_total=0;
+						gross_total=0;
+						for(var index=0; index < tot_prd.length; index++){
+							 product= tot_prd[index];
+							 qty_ordered += parseInt(product.quantity_ordered);
+							 disc_price += parseInt(product.prd_discount_in_price);
+							 net_total += parseInt(product.net_total_price);
+							 gross_total += parseInt(product.gross_total_price);
+							}
+						purchaseObj.total_quantity_purchased =  qty_ordered;
+						purchaseObj.total_discount_amount  =  disc_price;
+						purchaseObj.total_net_purchase_amount =net_total;
+						purchaseObj.total_gross_purchase_amount = gross_total;
+						
+						localStorage.setItem("purchase",JSON.stringify(purchaseObj));
+					}
+				}
+				
+			function showAllProducts(_items_per_page,_productHash,_items_per_row){
+				var totProducts=_productHash.length;
+				var remainder= 0;
+				var totPages = 0;
+				var totIpr = 0;
+				var remainIpr=0;
+				if( totProducts >= _items_per_page){
+					 remainder = totProducts % _items_per_page;
+					 totPages =  totProducts / _items_per_page;
+					}
+				else{
+					totPages=1;
+					remainder=totProducts;
+					}
+				if(_items_per_row >= totProducts){
+					totIpr=1;					
+					remainIpr= totProducts
+					}
+					else{
+						totIpr = totProducts / _items_per_row;
+						remainIpr = totProducts % _items_per_row;
+						}
+					var productCount= 0;
+					var temp=0;
+					for(var pageCount = 0;pageCount < totPages; pageCount++){
+						var productString = "";
+						//for(var divCount=0;divCount < totIpr;divCount++ ){								
+							for( var pro_cnt = 0; pro_cnt < totProducts;  pro_cnt++){
+								if(temp < _items_per_page){																	
+									productString += productOut(productHash[pro_cnt]);
+									productCount++;
+									temp++;
+									continue;
+								}
+							}
+						}
+						//}
+					$(".product_shelves").html(productString);
+				}
+				
+				
+				
+				/*
+				Unused functions
+				$("table").on('blur', 'input:text', function() {
+					var curr_row=$(this).closest("tr");
+					curr_row.find('td .tot_price').text(parseInt($(this).val())*(parseFloat(selected_prd["price"])));
+					//alert(curr_row.find('td .tot_price').text());
+				});
+				
+				function addRow(tableId) {
+			 		var table = document.getElementById(tableId);
+			 		var rowCount = table.rows.length;
+					var row = table.insertRow(rowCount);
+					var cell1 = row.insertCell(0);
+					var element1 = document.createElement("input");
+					element1.type = "checkbox";
+					element1.name="chkbox[]";
+					cell1.appendChild(element1);
+					var cell2 = row.insertCell(1);
+					cell2.innerHTML = rowCount + 1;
+					var cell3 = row.insertCell(2);
+					var element2 = document.createElement("input");
+					element2.type = "text";
+					element2.name = "txtbox[]";
+					cell3.appendChild(element2);
+				}
+					
+				function rowArrange(tableID){
+					var table = document.getElementById(tableID);
+					var rowCount = table.rows.length;
+					for(var i=1;i < rowCount;i++){
+						var row_this = table.rows[i];
+						row_this.cells[0].innerHTML=i;
+					}
+				}
+			 
+				function deleteRow(tableID) {
+					try {
+					var table = document.getElementById(tableID);
+					var rowCount = table.rows.length;
+					var temp=0;
+						for(var i=1; i<rowCount; i++) {
+							//var row = table.rows[i];
+							$("input:checkbox[name=check]:checked").each(function() {
+								$(this).closest("tr").remove();
+								return false;
+								//selected.push($(this).val());
+								//table.deleteRow( parseInt($(this).val()) - temp );
+								//temp++;
+							});
+						}
+					}catch(e) {
+						alert(e);
+					}
+				}				
+				*/ 
+		</script>
+		<div style="display:none;">
+			<style>
+				#add_to_cart{
+					}
+					
+				#cboxLoadedContent{
+					background: #fff;
+					}		
+				#register_email{
+					cursor: pointer;
+					}
+			</style>
+			<!--  Product popup-->
+			<div id="explore_product" >
+				<div id="products_heading" style="text-align:center;font-weight:bold;font-size: 20px;"></div>
+				<div id="selected_prd_content">
+					<div id="selected_prd_img">
+						<img/>
+						<br />
+					</div>
+					<!--selected_prd_img ends here -->
+					<!--selected_prd_desc starts here -->
+					<div id="selected_prd_desc">
+						Stock: <div id="stock_prd" class='sold'>In Stock</div>
+						Size: <div id="avail_size"><span><button id='s_btn' class='size'>S</button><button id='m_btn' class='size'>M</button><button id='l_btn' class='size'>L</button><button id='xl_btn' class='size'>XL</button><button id='xxl_btn' class='size'>XXL</button></span></div>
+						Colour: <div id="color_prd">
+								<span><button id="blue_btn" class="square blue"></button>
+									<button id="white_btn" class="square white"></button>
+									<button id="red_btn" class="square red"></button>
+									<button id="orange_btn" class="square orange"></button>
+									<button id="green_btn" class="square green"></button>
+									<button id="yellow_btn" class="square yellow"></button></span>
+							</div>
+					</div>
+					<div>Buy this Product
+						<span style="margin-left: 10px;">
+							<button id="add_to_cart" class="check_btn" align="right"> Add to Cart</button></span>
+						<!--<span style="margin:10px;">
+							<button id="add_row" class="check_btn" align="right"> + Add Purchase</button>
+						</span>
+						<span style="margin:10px;">
+							<button id="del_row" class="check_btn" align="right"> - Delete Purchase</button>
+						</span>-->
+					</div>
+						<table style="border:1px solid #ccc; margin:5px;width:575px;font-size:12px;" id="tab">
+							<tr>
+								<th>
+								S.No
+								</th>
+								<th>
+								Qty
+								</th>
+								<th>
+								Price per Qty
+								</th>
+								<th>
+									Total Price( Rs.)
+								</th>
+								<th>
+									Size
+								</th>
+								<th>
+									Colour
+								</th>
+								<!--<th>
+									Delete
+								</th>-->
+							</tr>
+							<tr>
+									<td class="sno">1.</td>
+									<td><input type="text" maxlength="3" id="qty" name="qty" class='qty' size="3" value="1"/></td>
+									<td><div id="price_per_quantity1" class="price_per_quantity"></div></td>
+									<td><div class="tot_price" id="tot_price1"></div></td>
+									<td><div id="selected_size_div"></div></td>
+									<td><div id="selected_colour_div" align="center"></div></td>
+									<!--<td><div id="delete_div" align="center"><input type="checkbox" name="check" id='check1' value='1' checked='unchecked' value=""/></div></td> -->
+								</tr>										
+						</table>						
+					<!--selected_prd_desc ends here -->
+				</div>
+			</div>
+		</div>
+		
+		<!-- Login Popup-->
+		<div style='display:none;'>
+			<style>
+				#cboxLoadedContent{
+					background: #ccc;
+					}	
+			</style>
+			<div id='login_pop'>
+				<div id= 'enclose'>
+					<div id='login_block'>
+						<h3> Login to the Ecom Site</h3>
+						<div style='display:inline-box;width:350px;margin:10px;'>
+							<label for='email_id'>Email</label>
+							<input type='text' id='email_id' name='email_id' style='float:right;'/>
+						</div>
+						<div style='display:inline-box;width:350px;margin:10px;'>
+							<label for='p_word'>Password</label>
+							<input type='password' id='p_word' name='p_word' style='float:right;'/>
+						</div>
+						<div style="display:inline-box;width:350px;" align='center'>
+							<button id='submitBtn'>Log In</button>
+						</div>
+					</div>
+					<div id='social_signup'>
+						<h3> Not a member yet</h3>
+						<div >
+							<button class='social_button' id='facebook_btn'><span ><%= image_tag 'social_facebook.png' %>Sign up with Facebook</span></button>						
+						</div>		
+						
+						<div>
+							<button class='social_button' id='google_btn'><span><%= image_tag 'social_google.png' %>Sign up with Google&nbsp;&nbsp;&nbsp;</span></button>						
+						</div>		
+						<div>
+							<button class='social_button' id='twitter_btn'><span><%= image_tag 'social_twitter.png' %>Sign up with Twitter&nbsp;&nbsp;</span></button>
+						</div>		
+						<div>
+							<button class='social_button' id='linked_in_btn'><span><%= image_tag "social_linked_in.png" %>Sign up with LinkedIn</span></button>
+						</div>		
+						
+							(OR)<br />
+						<div id="register_email" href='register_pop'><font color='blue'><b>Sign up with Email</b> </font></div>
+						
+					</div>
+					<br />
+					<a href='#' style='margin-left: 10px;' >Forget your password?</a>
+				</div>
+				<div id='register_popup' style='display:none;'>
+					<div id='login_block1'>
+						<h3> Register with the Ecom Site</h3>
+						<div style='display:inline-box;width:450px;margin:10px;'>
+							<label for='fname'>Name</label>
+							<input type='text' id='fname' name='fname' style='float:right;'/>
+						</div>
+
+						<div style='display:inline-box;width:450px;margin:10px;'>
+							<label for='email_id'>Email</label>
+							<input type='text' id='email_id' name='email_id' style='float:right;'/>
+						</div>
+						<div style='display:inline-box;width:450px;margin:10px;'>
+							<label for='p_word'>Password</label>
+							<input type='password' id='p_word' name='p_word' style='float:right;'/>
+						</div>
+						<div style='display:inline-box;width:450px;margin:10px;'>
+							<label for='confirm_pword'>Confirm Password</label>
+							<input type='Password' id='confirm_pword' name='confirm_pword' style='float:right;'/>
+						</div>
+						
+						<div style="display:inline-box;width:450px;" align='center'>
+							<button id='submitBtn'>Submit Details</button>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<!-- Register popup -->
+		<div style='display:none	;'>
+			<style>
+				#cboxLoadedContent{
+					background: #ccc;
+					}	
+			</style>
+		</div>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+<%= yield %>
+
+</body>
+</html>

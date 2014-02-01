@@ -1,0 +1,121 @@
+
+
+/* menu */
+
+div.navwrapper{
+	height:56px;
+	position: relative;
+	z-index: 100;
+	}
+
+ul#topnav {
+height:56px; 
+margin:0; 
+padding:0;  
+position:absolute;
+font-family:arial, helvetica, sans-serif;
+}
+
+
+ul#topnav li {
+float:left; 
+list-style-type:none; 
+background-image:url(../images/menu/navigation.png);
+}
+
+
+ul#topnav li a {display:block; text-decoration:none;}
+ul#topnav li a:link {text-decoration:none;}
+ul#topnav li a:visited {text-decoration:none;}
+ul#topnav li a:hover {text-decoration:none;}
+ul#topnav li a:active {text-decoration:none;}
+
+ul#topnav .menu {
+top:56px; 
+position: absolute; 
+background:#f9f7f1;
+padding:4px 0 12px 10px;
+border-left:1px solid #bfb088;
+border-bottom:1px solid #bfb088;
+border-right:1px solid #bfb088;
+text-align:left;
+max-width: 600px;
+max-height: 350px;
+
+}
+
+
+ul#topnav .menu ul.sub_nav {
+float:left;
+
+}
+
+
+
+ul#topnav .menu ul.sub_nav {
+margin:10px 20px 0 0; 
+padding:0;
+
+ }
+ 
+ul#topnav .menu ul.sub_nav li {float:left; border-bottom:1px solid #dbcfaf; background:none; width: 160px; margin-left: 10px; margin-right: 10px;}
+ul#topnav .menu ul.sub_nav li a, ul#topnav .menu ul.sub_nav li a:link, ul#topnav .menu ul.sub_nav li a:visited {font-size:12px; font-weight:normal; line-height:2em; color:#82641c; text-decoration:none; padding:8px 8px; height:100%; background-color:transparent; display:block;}
+ul#topnav .menu ul.sub_nav li a:hover {color:#fff; text-decoration: underline; background:#8e8664;}
+ul#topnav .menu ul.sub_nav li a:active {color:#82641c; text-decoration: none;}
+
+ul#topnav li .menu {display:none;}
+ul#topnav li:hover .menu {display:block;}
+ul#topnav li.over .menu {display:block; width:200px;; height:1%;}
+ul#topnav a.nav_item span {position:absolute; left:-10000px; width:1px; height:1px; overflow:hidden;}
+
+li.nav-home {background-position:0 0;}
+li.nav-home:hover, li.nav-home_over {background-position:0 -56px;}
+li.nav-home a.nav_item, li.nav-home_over a.nav_item {width:75px; height:56px;}
+
+
+li.nav-plants {background-position:-75px 0;}
+li.nav-plants:hover, li.nav-plants_over {background-position:-75px -56px;}
+li.nav-plants a.nav_item, li.nav-plants_over a.nav_item {width:75px; height:56px;}
+li.nav-plants div.menu {left:80px; min-width:157px}
+
+li.nav-duchyrange {background-position:-150px 0;}
+li.nav-duchyrange:hover, li.nav-duchyrange_over {background-position:-150px -56px;}
+li.nav-duchyrange a.nav_item, li.nav-duchyrange_over a.nav_item {width:155px; height:56px;}
+li.nav-duchyrange div.menu {left:155px; min-width:136px; width: 190px;}
+
+/*
+li.nav-gifts {background-position:-317px 0;}
+li.nav-gifts:hover, li.nav-gifts_over {background-position:-317px -56px;}
+li.nav-gifts a.nav_item, li.nav-gifts_over a.nav_item {width:155px; height:56px;}
+li.nav-gifts div.menu {left:324px; min-width:72px}
+*/
+
+li.nav-about {background-position:-305px 0;}
+li.nav-about:hover, li.nav-duchyrange_over {background-position:-305px -56px;}
+li.nav-about a.nav_item, li.nav-duchyrange_over a.nav_item {width:122px; height:56px;}
+li.nav-about div.menu {left:310px; min-width:136px; width: 190px;}
+
+li.nav-visit {background-position:-427px 0;}
+li.nav-visit:hover, li.nav-duchyrange_over {background-position:-427px -56px;}
+li.nav-visit a.nav_item, li.nav-duchyrange_over a.nav_item {width:110px; height:56px;}
+li.nav-visit div.menu {left:431px; min-width:136px; width: 190px;}
+
+li.nav-news {background-position:-537px 0;}
+li.nav-news:hover, li.nav-news_over {background-position:-537px -56px;}
+li.nav-news a.nav_item, li.nav-news_over a.nav_item {width:138px; height:56px;}
+li.nav-news div.menu {left:542px; min-width:136px; width: 190px;}
+
+/*
+li.nav-notebook {background-position:-787px 0;}
+li.nav-notebook:hover, li.nav-notebook_over {background-position:-619px -56px;}
+li.nav-notebook a.nav_item, li.nav-notebook_over a.nav_item {width:170px; height:56px;}
+*/
+
+li.nav-az {background-position:-675px 0;}
+li.nav-az:hover, li.nav-az_over {background-position:-675px -56px;}
+li.nav-az a.nav_item, li.nav-az_over a.nav_item {width:150px; height:56px;}
+
+li.nav-contact {background-position:-825px 0;}
+li.nav-contact:hover, li.nav-az_over {background-position:-825px -56px;}
+li.nav-contact a.nav_item, li.nav-az_over a.nav_item {width:135px; height:56px;}
+
